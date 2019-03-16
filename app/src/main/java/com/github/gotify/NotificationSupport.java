@@ -4,6 +4,7 @@ import android.app.NotificationChannel;
 import android.app.NotificationManager;
 import android.graphics.Color;
 import android.os.Build;
+
 import androidx.annotation.RequiresApi;
 import com.github.gotify.log.Log;
 
@@ -28,6 +29,7 @@ public class NotificationSupport {
 
     @RequiresApi(Build.VERSION_CODES.O)
     public static void createChannels(NotificationManager notificationManager) {
+
         try {
             // Low importance so that persistent notification can be sorted towards bottom of
             // notification shade. Also prevents vibrations caused by persistent notification
@@ -73,10 +75,12 @@ public class NotificationSupport {
             notificationManager.createNotificationChannel(messagesImportanceLow);
             notificationManager.createNotificationChannel(messagesImportanceDefault);
             notificationManager.createNotificationChannel(messagesImportanceHigh);
+
         } catch (Exception e) {
             Log.e("Could not create channel", e);
         }
     }
+
 
     /**
      * Map {@link com.github.gotify.client.model.Message#getPriority() Gotify message priorities to

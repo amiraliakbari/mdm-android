@@ -11,6 +11,8 @@ import android.graphics.Color;
 import android.net.ConnectivityManager;
 import android.os.Build;
 import android.os.IBinder;
+import android.os.Vibrator;
+
 import androidx.annotation.Nullable;
 import androidx.annotation.RequiresApi;
 import androidx.core.app.NotificationCompat;
@@ -220,6 +222,8 @@ public class WebSocketService extends Service {
 
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.N) {
             showNotificationGroup(priority);
+            Vibrator vibrator = (Vibrator) getSystemService(Context.VIBRATOR_SERVICE);
+            vibrator.vibrate(5000);
         }
 
         b.setAutoCancel(true)
