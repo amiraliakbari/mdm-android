@@ -1,2 +1,3 @@
 include ':app'
 include ':client'
+project(':client').projectDir = new File(settingsDir, 'app/src/Saba/client')
