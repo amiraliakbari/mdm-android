@@ -1,7 +1,7 @@
 <resources>
-    <string name="app_name">Saba Child Tablet</string>
-    <string name="welcome_text">Saba Child Tablet</string>
-    <string name="welcome_text_main_activity">Welcome to Saba Child Tablet</string>
+    <string name="app_name">Saba Cloud Messaging</string>
+    <string name="welcome_text">Saba Cloud Messaging</string>
+    <string name="welcome_text_main_activity">Welcome to Saba Cloud Messaging app. This app is used to receive messages and show them as notifications. In order to send a message to other devices, you should use the respective Controller app.</string>
     <string name="navigation_drawer_open">Open navigation drawer</string>
     <string name="navigation_drawer_close">Close navigation drawer</string>
     <string name="nav_header_desc">Navigation header</string>
@@ -61,4 +61,7 @@
     <string name="websocket_no_network">Waiting for network</string>
     <string name="connection">%s@%s</string>
     <string name="title_activity_main">MainActivity</string>
+    <string name="default_notification_channel_id" translatable="false">fcm_default_channel</string>
+    <string name="fcm_message">Saba Message</string>
+    <string name="welcome">Welcome to Saba Messaging Platform. This variation uses FCM to deliver messages.</string>
 </resources>

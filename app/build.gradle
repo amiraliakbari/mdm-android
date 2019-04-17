@@ -1,16 +1,17 @@
 plugins {
     id "com.diffplug.gradle.spotless" version "3.15.0"
 }
+
 apply plugin: 'com.android.application'
 
 android {
     compileSdkVersion 28
     defaultConfig {
-        applicationId "com.example.gotifyinflavor"
+        applicationId "com.example.sabacloudmessaging"
         minSdkVersion 21
         targetSdkVersion 28
         versionCode 8
-        versionName "2.0.5"
+        versionName "0.1"
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
         vectorDrawables.useSupportLibrary = true
     }
@@ -37,10 +38,11 @@ android {
     productFlavors{
 
         FCM{
-
+            applicationIdSuffix ".sabafcm"
         }
-        Saba{
 
+        Saba{
+            applicationIdSuffix ".saba"
         }
     }
 }
@@ -68,6 +70,11 @@ dependencies {
     annotationProcessor 'com.jakewharton:butterknife-compiler:9.0.0-rc1'
     implementation 'com.hypertrack:hyperlog:0.0.10'
     implementation 'com.squareup.picasso:picasso:2.71828'
+
+    implementation 'com.google.firebase:firebase-core:16.0.1'
+    implementation 'com.google.firebase:firebase-iid:17.1.2'
+    implementation 'com.google.firebase:firebase-messaging:17.6.0'
+    implementation 'android.arch.work:work-runtime:1.0.0'
 }
 
 configurations {
@@ -84,3 +91,8 @@ spotless {
         importOrder('', 'static *')
     }
 }
+
+//if ( productFlavors == "FCM"){
+    apply plugin: 'com.google.gms.google-services'
+//}
+

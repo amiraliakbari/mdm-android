@@ -16,6 +16,7 @@
             android:id="@+id/textView"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/welcome_text_main_activity" />
+            android:text="@string/welcome_text_main_activity"
+            android:textAlignment="center"/>
     </LinearLayout>
 </androidx.coordinatorlayout.widget.CoordinatorLayout>
