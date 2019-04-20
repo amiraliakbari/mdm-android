@@ -41,10 +41,6 @@ public class InitializationActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
 //        Log.init(this);
         setContentView(R.layout.splash);
-        SharedPreferences FCMSharedPRef = getSharedPreferences("FCMPref", MODE_PRIVATE);
-        SharedPreferences.Editor editor = FCMSharedPRef.edit();
-        editor.clear();
-        editor.apply();
 
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
             NotificationSupport.createChannels(

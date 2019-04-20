@@ -9,6 +9,7 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.ProgressBar;
+import android.widget.TextView;
 
 import com.example.sabacloudmessaging.R;
 import com.example.sabacloudmessaging.SSLSettings;
@@ -67,12 +68,16 @@ public class LoginActivity extends AppCompatActivity {
     private boolean disableSSLValidation;
     private String caCertContents;
     private AdvancedDialog advancedDialog;
+    TextView TextView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         UncaughtExceptionHandler.registerCurrentThread();
         setContentView(R.layout.activity_login);
+        TextView = (TextView)findViewById(R.id.firstrun);
+        TextView.setText("Initializing . . .");
+        TextView.setTextSize(60);
         Log.i("Entering " + getClass().getSimpleName());
         ButterKnife.bind(this);
         settings = new Settings(this);

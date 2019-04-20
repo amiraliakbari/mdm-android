@@ -2,7 +2,6 @@ package com.github.gotify.client;
 
 import com.google.gson.Gson;
 import com.google.gson.JsonParseException;
-import com.google.gson.JsonElement;
 import okhttp3.Interceptor;
 import okhttp3.OkHttpClient;
 import okhttp3.RequestBody;
@@ -18,7 +17,6 @@ import com.github.gotify.client.auth.HttpBasicAuth;
 import com.github.gotify.client.auth.ApiKeyAuth;
 import com.github.gotify.client.auth.OAuth;
 import com.github.gotify.client.auth.OAuth.AccessTokenListener;
-import com.github.gotify.client.auth.OAuthFlow;
 
 import java.io.IOException;
 import java.lang.annotation.Annotation;
@@ -26,7 +24,6 @@ import java.lang.reflect.Type;
 import java.text.DateFormat;
 import java.util.LinkedHashMap;
 import java.util.Map;
-import java.util.HashMap;
 
 public class ApiClient {
 
