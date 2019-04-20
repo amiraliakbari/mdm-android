@@ -37,11 +37,11 @@ android {
 
     productFlavors{
 
-        FCM{
+        fcm{
             applicationIdSuffix ".sabafcm"
         }
 
-        Saba{
+        saba{
             applicationIdSuffix ".saba"
         }
     }
