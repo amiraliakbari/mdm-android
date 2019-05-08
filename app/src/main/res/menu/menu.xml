@@ -1,0 +1,14 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:id="@+id/home"
+        android:title="Home"
+        android:icon="@drawable/ic_home_active" />
+    <item android:id="@+id/memory"
+        android:title="Memory"
+        android:icon="@drawable/ic_memory_active" />
+    <item android:id="@+id/battery"
+        android:title="Battery"
+        android:icon="@drawable/ic_battery_active" />
+    <item android:id="@+id/network"
+        android:title="Network"
+        android:icon="@drawable/ic_network_active"/>
+</menu>

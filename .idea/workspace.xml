@@ -1,0 +1,893 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AndroidLayouts">
+    <shared>
+      <config>
+        <device id="Nexus 6P" />
+        <device id="pixel" />
+      </config>
+    </shared>
+  </component>
+  <component name="AndroidLogFilters">
+    <option name="TOOL_WINDOW_CUSTOM_FILTER" value="os1" />
+    <option name="TOOL_WINDOW_LOG_LEVEL" value="info" />
+    <option name="TOOL_WINDOW_CONFIGURED_FILTER" value="Show only selected application" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="3bd0d920-c80f-409f-9ae3-da2aaac23310" name="Default Changelist" comment="- Added bottom Saba icon, logo and navigation menu&#10;- Added Home activity which shows phones general info">
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/codeStyles/Project.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/app/build.gradle" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/androidTest/java/com/example/sabacloudmessaging/ExampleInstrumentedTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/fcm/AndroidManifest.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/fcm/debug/google-services.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/fcm/java/com/example/sabacloudmessaging/MainActivity.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/fcm/java/com/example/sabacloudmessaging/MyFirebaseMessagingService.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/fcm/java/com/example/sabacloudmessaging/MyWorker.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/fcm/java/com/example/sabacloudmessaging/SharedPref.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/fcm/release/google-services.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/fcm/res/drawable-v24/ic_launcher_foreground.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/fcm/res/drawable/ic_gotify.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/fcm/res/drawable/ic_launcher_background.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/fcm/res/drawable/ic_stat_ic_notification.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/fcm/res/layout/activity_main.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/fcm/res/mipmap-anydpi-v26/ic_launcher.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/fcm/res/mipmap-anydpi-v26/ic_launcher_round.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/fcm/res/mipmap-hdpi/ic_launcher.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/fcm/res/mipmap-hdpi/ic_launcher_round.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/fcm/res/mipmap-mdpi/ic_launcher.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/fcm/res/mipmap-mdpi/ic_launcher_round.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/fcm/res/mipmap-xhdpi/ic_launcher.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/fcm/res/mipmap-xhdpi/ic_launcher_round.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/fcm/res/mipmap-xxhdpi/ic_launcher.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/fcm/res/mipmap-xxhdpi/ic_launcher_round.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/fcm/res/mipmap-xxxhdpi/ic_launcher.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/fcm/res/mipmap-xxxhdpi/ic_launcher_round.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/fcm/res/values/colors.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/fcm/res/values/strings.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/fcm/res/values/styles.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/sabacloudmessaging/ShowMessageNotification.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/drawable/ic_gps.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/drawable/ic_saba.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_main.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_main.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/mipmap-anydpi-v26/ic_launcher.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/mipmap-anydpi-v26/ic_launcher_round.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/mipmap-hdpi/ic_saba.png" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/mipmap-hdpi/ic_saba.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/mipmap-mdpi/ic_saba.png" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/mipmap-mdpi/ic_saba.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/mipmap-xhdpi/ic_saba.png" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/mipmap-xhdpi/ic_saba.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/mipmap-xxhdpi/ic_saba.png" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/mipmap-xxhdpi/ic_saba.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/mipmap-xxxhdpi/ic_saba.png" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/mipmap-xxxhdpi/ic_saba.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/values/colors.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/values/colors.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/values/strings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/values/strings.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/values/styles.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/values/styles.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/saba/AndroidManifest.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/saba/client/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/saba/client/.swagger-codegen-ignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/saba/client/.swagger-codegen/VERSION" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/saba/client/.travis.yml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/saba/client/README.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/saba/client/build.gradle" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/saba/client/build.sbt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/saba/client/docs/Application.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/saba/client/docs/ApplicationApi.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/saba/client/docs/Client.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/saba/client/docs/ClientApi.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/saba/client/docs/Error.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/saba/client/docs/Message.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/saba/client/docs/MessageApi.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/saba/client/docs/PagedMessages.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/saba/client/docs/Paging.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/saba/client/docs/PluginApi.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/saba/client/docs/PluginConf.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/saba/client/docs/User.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/saba/client/docs/UserApi.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/saba/client/docs/UserPass.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/saba/client/docs/UserWithPass.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/saba/client/docs/VersionApi.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/saba/client/docs/VersionInfo.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/saba/client/git_push.sh" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/saba/client/gradle.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/saba/client/gradle/wrapper/gradle-wrapper.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/saba/client/gradle/wrapper/gradle-wrapper.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/saba/client/gradlew" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/saba/client/gradlew.bat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/saba/client/pom.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/saba/client/src/main/AndroidManifest.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/saba/client/src/main/java/com/github/gotify/client/ApiClient.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/saba/client/src/main/java/com/github/gotify/client/CollectionFormats.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/saba/client/src/main/java/com/github/gotify/client/JSON.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/saba/client/src/main/java/com/github/gotify/client/StringUtil.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/saba/client/src/main/java/com/github/gotify/client/api/ApplicationApi.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/saba/client/src/main/java/com/github/gotify/client/api/ClientApi.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/saba/client/src/main/java/com/github/gotify/client/api/MessageApi.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/saba/client/src/main/java/com/github/gotify/client/api/PluginApi.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/saba/client/src/main/java/com/github/gotify/client/api/UserApi.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/saba/client/src/main/java/com/github/gotify/client/api/VersionApi.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/saba/client/src/main/java/com/github/gotify/client/auth/ApiKeyAuth.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/saba/client/src/main/java/com/github/gotify/client/auth/HttpBasicAuth.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/saba/client/src/main/java/com/github/gotify/client/auth/OAuth.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/saba/client/src/main/java/com/github/gotify/client/auth/OAuthFlow.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/saba/client/src/main/java/com/github/gotify/client/auth/OAuthOkHttpClient.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/saba/client/src/main/java/com/github/gotify/client/model/Application.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/saba/client/src/main/java/com/github/gotify/client/model/Client.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/saba/client/src/main/java/com/github/gotify/client/model/Error.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/saba/client/src/main/java/com/github/gotify/client/model/Message.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/saba/client/src/main/java/com/github/gotify/client/model/PagedMessages.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/saba/client/src/main/java/com/github/gotify/client/model/Paging.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/saba/client/src/main/java/com/github/gotify/client/model/PluginConf.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/saba/client/src/main/java/com/github/gotify/client/model/User.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/saba/client/src/main/java/com/github/gotify/client/model/UserPass.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/saba/client/src/main/java/com/github/gotify/client/model/UserWithPass.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/saba/client/src/main/java/com/github/gotify/client/model/VersionInfo.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/saba/client/src/test/java/com/github/gotify/client/api/ApplicationApiTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/saba/client/src/test/java/com/github/gotify/client/api/ClientApiTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/saba/client/src/test/java/com/github/gotify/client/api/MessageApiTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/saba/client/src/test/java/com/github/gotify/client/api/PluginApiTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/saba/client/src/test/java/com/github/gotify/client/api/UserApiTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/saba/client/src/test/java/com/github/gotify/client/api/VersionApiTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/saba/debug/google-services.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/saba/java/com/example/sabacloudmessaging/MainActivity.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/saba/java/com/example/sabacloudmessaging/MissedMessageUtil.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/saba/java/com/example/sabacloudmessaging/NotificationSupport.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/saba/java/com/example/sabacloudmessaging/SSLSettings.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/saba/java/com/example/sabacloudmessaging/Settings.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/saba/java/com/example/sabacloudmessaging/Utils.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/saba/java/com/example/sabacloudmessaging/api/Api.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/saba/java/com/example/sabacloudmessaging/api/ApiException.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/saba/java/com/example/sabacloudmessaging/api/Callback.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/saba/java/com/example/sabacloudmessaging/api/CertUtils.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/saba/java/com/example/sabacloudmessaging/api/ClientFactory.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/saba/java/com/example/sabacloudmessaging/init/BootCompletedReceiver.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/saba/java/com/example/sabacloudmessaging/init/InitializationActivity.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/saba/java/com/example/sabacloudmessaging/log/Format.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/saba/java/com/example/sabacloudmessaging/log/Log.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/saba/java/com/example/sabacloudmessaging/log/LogsActivity.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/saba/java/com/example/sabacloudmessaging/log/UncaughtExceptionHandler.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/saba/java/com/example/sabacloudmessaging/login/AdvancedDialog.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/saba/java/com/example/sabacloudmessaging/login/LoginActivity.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/saba/java/com/example/sabacloudmessaging/messages/ListMessageAdapter.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/saba/java/com/example/sabacloudmessaging/messages/MessagesActivity.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/saba/java/com/example/sabacloudmessaging/messages/provider/ApplicationHolder.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/saba/java/com/example/sabacloudmessaging/messages/provider/MessageFacade.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/saba/java/com/example/sabacloudmessaging/messages/provider/MessageImageCombiner.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/saba/java/com/example/sabacloudmessaging/messages/provider/MessageRequester.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/saba/java/com/example/sabacloudmessaging/messages/provider/MessageState.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/saba/java/com/example/sabacloudmessaging/messages/provider/MessageStateHolder.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/saba/java/com/example/sabacloudmessaging/messages/provider/MessageWithImage.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/saba/java/com/example/sabacloudmessaging/service/MDMService.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/saba/java/com/example/sabacloudmessaging/service/ReconnectListener.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/saba/java/com/example/sabacloudmessaging/service/WebSocketConnection.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/saba/java/com/example/sabacloudmessaging/service/WebSocketService.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/saba/release/google-services.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/saba/res/drawable-v24/ic_launcher_foreground.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/saba/res/drawable/gotify.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/saba/res/drawable/gradient.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/saba/res/drawable/ic_alarm.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/saba/res/drawable/ic_bug_report.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/saba/res/drawable/ic_dashboard.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/saba/res/drawable/ic_delete.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/saba/res/drawable/ic_gotify.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/saba/res/drawable/ic_launcher_background.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/saba/res/drawable/ic_placeholder.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/saba/res/drawable/ic_power_setting.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/saba/res/drawable/ic_refresh.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/saba/res/drawable/ic_settings.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/saba/res/drawable/saba1.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/saba/res/drawable/side_nav_bar.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/saba/res/font/titr.ttf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/saba/res/layout/activity_login.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/saba/res/layout/activity_logs.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/saba/res/layout/activity_main.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/saba/res/layout/activity_messages.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/saba/res/layout/advanced_settings_dialog.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/saba/res/layout/app_bar_drawer.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/saba/res/layout/content_main.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/saba/res/layout/message_item.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/saba/res/layout/nav_header_drawer.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/saba/res/layout/splash.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/saba/res/menu/logs_action.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/saba/res/menu/messages_action.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/saba/res/menu/messages_menu.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/saba/res/mipmap-anydpi-v26/ic_launcher.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/saba/res/mipmap-anydpi-v26/ic_launcher_round.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/saba/res/mipmap-hdpi/ic_launcher.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/saba/res/mipmap-hdpi/ic_launcher_foreground.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/saba/res/mipmap-hdpi/ic_launcher_round.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/saba/res/mipmap-mdpi/ic_launcher.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/saba/res/mipmap-mdpi/ic_launcher_foreground.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/saba/res/mipmap-mdpi/ic_launcher_round.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/saba/res/mipmap-xhdpi/ic_launcher.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/saba/res/mipmap-xhdpi/ic_launcher_foreground.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/saba/res/mipmap-xhdpi/ic_launcher_round.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/saba/res/mipmap-xxhdpi/ic_launcher.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/saba/res/mipmap-xxhdpi/ic_launcher_foreground.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/saba/res/mipmap-xxhdpi/ic_launcher_round.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/saba/res/mipmap-xxxhdpi/ic_launcher.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/saba/res/mipmap-xxxhdpi/ic_launcher_foreground.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/saba/res/mipmap-xxxhdpi/ic_launcher_round.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/saba/res/values-fa/strings.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/saba/res/values-fa/styles.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/saba/res/values-v21/styles.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/saba/res/values/colors.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/saba/res/values/dimens.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/saba/res/values/ic_launcher_background.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/saba/res/values/strings.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/saba/res/values/styles.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/test/java/com/example/sabacloudmessaging/ExampleUnitTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/build.gradle" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/download-badge.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/gradle/wrapper/gradle-wrapper.properties" beforeDir="false" afterPath="$PROJECT_DIR$/gradle/wrapper/gradle-wrapper.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gradlew.bat" beforeDir="false" afterPath="$PROJECT_DIR$/gradlew.bat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lint.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/settings.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/settings.gradle" afterDir="false" />
+    </list>
+    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ExternalProjectsManager">
+    <system id="GRADLE">
+      <state>
+        <projects_view />
+      </state>
+    </system>
+  </component>
+  <component name="FileEditorManager">
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/src/main/java/com/sabaos/core/MainActivity.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="840">
+              <caret line="80" column="75" selection-start-line="80" selection-start-column="75" selection-end-line="80" selection-end-column="75" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/src/main/java/com/sabaos/core/service/WebSocketService.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="2250">
+              <caret line="182" selection-start-line="182" selection-end-line="182" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/src/main/java/com/sabaos/core/ShowMessageNotification.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="780">
+              <caret line="66" column="32" selection-start-line="66" selection-start-column="32" selection-end-line="66" selection-end-column="46" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/src/main/java/com/sabaos/core/init/InitializationActivity.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="780">
+              <caret line="79" column="5" selection-start-line="79" selection-start-column="5" selection-end-line="79" selection-end-column="5" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_login.xml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="420">
+              <caret line="28" column="35" selection-start-line="28" selection-start-column="35" selection-end-line="28" selection-end-column="35" />
+            </state>
+          </provider>
+          <provider editor-type-id="android-designer2" />
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/src/main/java/com/sabaos/core/login/LoginActivity.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="1350">
+              <caret line="117" column="5" selection-start-line="117" selection-start-column="5" selection-end-line="117" selection-end-column="5" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/app/src/main/java/com/sabaos/core/init/BootCompletedReceiver.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="225">
+              <caret line="21" column="39" selection-start-line="21" selection-end-line="22" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_main.xml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="2205">
+              <caret line="147" column="4" selection-start-line="147" selection-start-column="4" selection-end-line="147" selection-end-column="4" />
+            </state>
+          </provider>
+          <provider editor-type-id="android-designer2" />
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/src/main/res/menu/menu.xml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="30">
+              <caret line="2" column="27" selection-start-line="2" selection-end-line="3" />
+            </state>
+          </provider>
+          <provider editor-type-id="android-designer2" />
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/src/main/res/drawable/logo.png">
+          <provider selected="true" editor-type-id="images" />
+        </entry>
+      </file>
+    </leaf>
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="layoutResourceFile_vertical" />
+        <option value="Class" />
+        <option value="valueResourceFile" />
+        <option value="resourceFile" />
+      </list>
+    </option>
+  </component>
+  <component name="FindInProjectRecents">
+    <findStrings>
+      <find>com.example.sabacloudmessaging</find>
+      <find>Snackbar</find>
+      <find>Log.</find>
+      <find>showNotificationG</find>
+      <find>Saba</find>
+      <find>welcome_text</find>
+      <find>foreground</find>
+      <find>phoneSerialNumber</find>
+      <find>string</find>
+      <find>com.sabaos.saba</find>
+      <find>startSer</find>
+      <find>10pt</find>
+      <find>&lt;stroke</find>
+      <find>first</find>
+      <find>Transition</find>
+      <find>Ini</find>
+      <find>Could not co</find>
+      <find>websocket_could_not_connect</find>
+      <find>C</find>
+      <find>not_ava</find>
+      <find>wronguserpw</find>
+    </findStrings>
+    <replaceStrings>
+      <replace>com.sabaos.core</replace>
+      <replace>5pt</replace>
+    </replaceStrings>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="IdeDocumentHistory">
+    <option name="CHANGED_PATHS">
+      <list>
+        <option value="$PROJECT_DIR$/app/src/main/java/com/sabaos/core/api/Api.java" />
+        <option value="$PROJECT_DIR$/build.gradle" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/sabaos/core/init/BootCompletedReceiver.java" />
+        <option value="$PROJECT_DIR$/app/src/main/res/values/strings.xml" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/sabaos/core/Utilities/DeviceInfo.java" />
+        <option value="$PROJECT_DIR$/app/src/main/res/layout/saba_main_listview.xml" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/sabaos/core/service/MDMService.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/sabaos/core/Utils/DeviceInfo.java" />
+        <option value="$PROJECT_DIR$/app/build/generated/source/buildConfig/debug/com/sabaos/core/BuildConfig.java" />
+        <option value="$PROJECT_DIR$/app/src/main/res/layout/splash.xml" />
+        <option value="$PROJECT_DIR$/app/src/main/res/mipmap-anydpi-v26/ic_launcher_round.xml" />
+        <option value="$PROJECT_DIR$/app/src/main/res/mipmap-anydpi-v26/ic_launcher.xml" />
+        <option value="$PROJECT_DIR$/app/src/main/res/drawable/custom_border.xml" />
+        <option value="$PROJECT_DIR$/app/src/main/res/layout/activity_battery.xml" />
+        <option value="$PROJECT_DIR$/app/src/main/res/layout/activity_memory.xml" />
+        <option value="$PROJECT_DIR$/app/src/main/res/layout/activity_mobile_data.xml" />
+        <option value="$PROJECT_DIR$/app/src/main/res/drawable/slide_to_left.xml" />
+        <option value="$PROJECT_DIR$/app/src/main/res/values/integers.xml" />
+        <option value="$PROJECT_DIR$/app/src/main/res/anim/slide_from_right.xml" />
+        <option value="$PROJECT_DIR$/app/src/main/res/anim/slide_from_left.xml" />
+        <option value="$PROJECT_DIR$/app/src/main/res/anim/slide_to_left.xml" />
+        <option value="$PROJECT_DIR$/app/src/main/res/anim/slide_to_right.xml" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/sabaos/core/MobileDataActivity.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/sabaos/core/MemoryActivity.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/sabaos/core/BatteryActivity.java" />
+        <option value="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" />
+        <option value="$PROJECT_DIR$/app/build.gradle" />
+        <option value="$PROJECT_DIR$/app/src/main/res/menu/menu.xml" />
+        <option value="$PROJECT_DIR$/app/src/main/res/values/colors.xml" />
+        <option value="$PROJECT_DIR$/app/src/main/res/drawable/menu_style.xml" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/sabaos/core/MainActivity.java" />
+        <option value="$PROJECT_DIR$/app/src/main/res/layout/activity_main.xml" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/sabaos/core/init/InitializationActivity.java" />
+        <option value="$PROJECT_DIR$/app/src/main/res/layout/activity_login.xml" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/sabaos/core/login/LoginActivity.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/sabaos/core/ShowMessageNotification.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/sabaos/core/service/WebSocketService.java" />
+      </list>
+    </option>
+  </component>
+  <component name="ProjectFrameBounds" extendedState="6">
+    <option name="x" value="78" />
+    <option name="y" value="48" />
+    <option name="width" value="1228" />
+    <option name="height" value="768" />
+  </component>
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="1" id="Add" />
+  </component>
+  <component name="ProjectView">
+    <navigator currentView="ProjectPane" proportions="" version="1">
+      <foldersAlwaysOnTop value="true" />
+    </navigator>
+    <panes>
+      <pane id="PackagesPane" />
+      <pane id="ProjectPane" />
+      <pane id="Scope" />
+      <pane id="AndroidView">
+        <subPane>
+          <expand>
+            <path>
+              <item name="Sabamessagingsampleapp" type="1abcf292:AndroidViewProjectNode" />
+              <item name="app" type="feadf853:AndroidModuleNode" />
+            </path>
+            <path>
+              <item name="Sabamessagingsampleapp" type="1abcf292:AndroidViewProjectNode" />
+              <item name="app" type="feadf853:AndroidModuleNode" />
+              <item name="java" type="edd41e36:AndroidSourceTypeNode" />
+            </path>
+            <path>
+              <item name="Sabamessagingsampleapp" type="1abcf292:AndroidViewProjectNode" />
+              <item name="app" type="feadf853:AndroidModuleNode" />
+              <item name="java" type="edd41e36:AndroidSourceTypeNode" />
+              <item name="core" type="cbb59c9e:AndroidPsiDirectoryNode" />
+            </path>
+          </expand>
+          <select />
+        </subPane>
+      </pane>
+    </panes>
+  </component>
+  <component name="PropertiesComponent">
+    <property name="android.project.structure.last.selected" value="app" />
+    <property name="android.project.structure.proportion" value="0.15" />
+    <property name="android.sdk.path" value="$PROJECT_DIR$/../../../Android/sdk-2018/Sdk" />
+    <property name="device.picker.selection" value="5203879ab4544485" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../saba2" />
+    <property name="settings.editor.selected.configurable" value="project.propVCSSupport.Mappings" />
+    <property name="show.do.not.ask.upgrade.gradle.plugin" value="3.3.2" />
+  </component>
+  <component name="RecentsManager">
+    <key name="android.template.packageName">
+      <recent name="com.sabaos.core" />
+    </key>
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="com.sabaos.core" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/app/src/main/res/drawable" />
+      <recent name="$PROJECT_DIR$/app/src/main/res" />
+      <recent name="$PROJECT_DIR$/app/src/main/res/mipmap-xxxhdpi" />
+      <recent name="$PROJECT_DIR$/app/src/main/res/mipmap-xxhdpi" />
+      <recent name="$PROJECT_DIR$/app/src/main/res/mipmap-xhdpi" />
+    </key>
+  </component>
+  <component name="RunDashboard">
+    <option name="ruleStates">
+      <list>
+        <RuleState>
+          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
+        </RuleState>
+        <RuleState>
+          <option name="name" value="StatusDashboardGroupingRule" />
+        </RuleState>
+      </list>
+    </option>
+  </component>
+  <component name="RunManager">
+    <configuration default="true" type="AndroidJUnit" factoryName="Android JUnit">
+      <option name="TEST_OBJECT" value="class" />
+      <option name="WORKING_DIRECTORY" value="$MODULE_DIR$" />
+      <method v="2">
+        <option name="Android.Gradle.BeforeRunTask" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="app" type="AndroidRunConfigurationType" factoryName="Android App" activateToolWindowBeforeRun="false">
+      <module name="app" />
+      <option name="DEPLOY" value="true" />
+      <option name="DEPLOY_APK_FROM_BUNDLE" value="false" />
+      <option name="DEPLOY_AS_INSTANT" value="false" />
+      <option name="ARTIFACT_NAME" value="" />
+      <option name="PM_INSTALL_OPTIONS" value="" />
+      <option name="DYNAMIC_FEATURES_DISABLED_LIST" value="" />
+      <option name="ACTIVITY_EXTRA_FLAGS" value="" />
+      <option name="MODE" value="default_activity" />
+      <option name="CLEAR_LOGCAT" value="false" />
+      <option name="SHOW_LOGCAT_AUTOMATICALLY" value="false" />
+      <option name="SKIP_NOOP_APK_INSTALLATIONS" value="true" />
+      <option name="FORCE_STOP_RUNNING_APP" value="true" />
+      <option name="TARGET_SELECTION_MODE" value="SHOW_DIALOG" />
+      <option name="USE_LAST_SELECTED_DEVICE" value="false" />
+      <option name="PREFERRED_AVD" value="" />
+      <option name="SELECTED_CLOUD_MATRIX_CONFIGURATION_ID" value="-1" />
+      <option name="SELECTED_CLOUD_MATRIX_PROJECT_ID" value="" />
+      <option name="DEBUGGER_TYPE" value="Auto" />
+      <Auto>
+        <option name="USE_JAVA_AWARE_DEBUGGER" value="false" />
+        <option name="SHOW_STATIC_VARS" value="true" />
+        <option name="WORKING_DIR" value="" />
+        <option name="TARGET_LOGGING_CHANNELS" value="lldb process:gdb-remote packets" />
+        <option name="SHOW_OPTIMIZED_WARNING" value="true" />
+      </Auto>
+      <Hybrid>
+        <option name="USE_JAVA_AWARE_DEBUGGER" value="false" />
+        <option name="SHOW_STATIC_VARS" value="true" />
+        <option name="WORKING_DIR" value="" />
+        <option name="TARGET_LOGGING_CHANNELS" value="lldb process:gdb-remote packets" />
+        <option name="SHOW_OPTIMIZED_WARNING" value="true" />
+      </Hybrid>
+      <Java />
+      <Native>
+        <option name="USE_JAVA_AWARE_DEBUGGER" value="false" />
+        <option name="SHOW_STATIC_VARS" value="true" />
+        <option name="WORKING_DIR" value="" />
+        <option name="TARGET_LOGGING_CHANNELS" value="lldb process:gdb-remote packets" />
+        <option name="SHOW_OPTIMIZED_WARNING" value="true" />
+      </Native>
+      <Profilers>
+        <option name="ADVANCED_PROFILING_ENABLED" value="false" />
+        <option name="STARTUP_CPU_PROFILING_ENABLED" value="false" />
+        <option name="STARTUP_CPU_PROFILING_CONFIGURATION_NAME" value="Sample Java Methods" />
+      </Profilers>
+      <option name="DEEP_LINK" value="" />
+      <option name="ACTIVITY_CLASS" value="" />
+      <method v="2">
+        <option name="Android.Gradle.BeforeRunTask" enabled="true" />
+      </method>
+    </configuration>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="3bd0d920-c80f-409f-9ae3-da2aaac23310" name="Default Changelist" comment="" />
+      <created>1556688347966</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1556688347966</updated>
+    </task>
+    <task id="LOCAL-00001" summary="- Added bottom Saba icon, logo and navigation menu&#10;- Added Home activity which shows phones general info">
+      <created>1557316311901</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1557316311901</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
+    <servers />
+  </component>
+  <component name="ToolWindowManager">
+    <frame x="67" y="27" width="1373" height="873" extended-state="6" />
+    <layout>
+      <window_info id="Captures" order="0" side_tool="true" weight="0.25" />
+      <window_info content_ui="combo" id="Project" order="1" sideWeight="0.4984472" visible="true" weight="0.32931423" />
+      <window_info id="Structure" order="2" side_tool="true" />
+      <window_info id="Favorites" order="3" side_tool="true" />
+      <window_info id="Build Variants" order="4" sideWeight="0.5015528" side_tool="true" weight="0.25847778" />
+      <window_info id="Image Layers" order="5" />
+      <window_info id="Designer" order="6" />
+      <window_info id="Capture Tool" order="7" />
+      <window_info id="Resources Explorer" order="8" sideWeight="0.4984472" weight="0.32931423" />
+      <window_info anchor="bottom" id="Run" order="0" />
+      <window_info anchor="bottom" id="Logcat" order="1" weight="0.49660787" />
+      <window_info anchor="bottom" id="TODO" order="2" />
+      <window_info active="true" anchor="bottom" id="Debug" order="3" visible="true" weight="0.36770692" />
+      <window_info anchor="bottom" id="Terminal" order="4" sideWeight="0.4996232" weight="0.56987786" />
+      <window_info anchor="bottom" id="Event Log" order="5" sideWeight="0.50037676" side_tool="true" weight="0.32880434" />
+      <window_info anchor="bottom" id="Version Control" order="6" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Build" order="7" sideWeight="0.4996232" weight="0.24287653" />
+      <window_info anchor="bottom" id="Android Profiler" order="8" />
+      <window_info anchor="bottom" id="Find" order="9" weight="0.3292683" />
+      <window_info anchor="right" id="Preview" order="0" sideWeight="0.49720672" weight="0.3051997" />
+      <window_info anchor="right" id="Capture Analysis" order="1" />
+      <window_info anchor="right" id="Gradle" order="2" />
+      <window_info anchor="right" id="Theme Preview" order="3" />
+      <window_info anchor="right" id="Palette&#9;" order="4" />
+      <window_info anchor="right" id="Device File Explorer" order="5" sideWeight="0.5027933" side_tool="true" weight="0.32931423" />
+    </layout>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="- Added bottom Saba icon, logo and navigation menu&#10;- Added Home activity which shows phones general info" />
+    <option name="LAST_COMMIT_MESSAGE" value="- Added bottom Saba icon, logo and navigation menu&#10;- Added Home activity which shows phones general info" />
+  </component>
+  <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/mipmap-mdpi/ic_saba.png">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/mipmap-hdpi/ic_saba.png">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/mipmap-anydpi-v26/ic_saba.png" />
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/drawable/saba1.jpg">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/drawable/ic_gps.png" />
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/drawable/gps_icon.png">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/drawable-v24/ic_launcher_foreground.xml">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/drawable/ic_launcher_background.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-2185" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/mipmap-hdpi/ic_launcher_round.png">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/values/strings.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="158">
+          <caret line="51" column="31" selection-start-line="51" selection-start-column="28" selection-end-line="51" selection-end-column="31" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/sabaos/core/Utils/DeviceInfo.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1455">
+          <caret line="110" column="5" selection-start-line="110" selection-start-column="5" selection-end-line="110" selection-end-column="5" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/androidx.annotation/annotation/1.0.0/c5897dbbda33e66ca6f3224a2534891bbfcbda5a/annotation-1.0.0-sources.jar!/androidx/annotation/IdRes.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="180">
+          <caret line="34" column="25" selection-start-line="34" selection-start-column="25" selection-end-line="34" selection-end-column="25" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.jakewharton/butterknife-annotations/10.1.0/dec010b8adf4f24ba47ec41e54cf02c16f043d33/butterknife-annotations-10.1.0-sources.jar!/butterknife/BindView.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="210">
+          <caret line="19" column="6" selection-start-line="19" selection-start-column="6" selection-end-line="19" selection-end-column="6" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/mipmap-hdpi/ic_launcher.png">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/mipmap-anydpi-v26/ic_launcher_round.xml" />
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/mipmap-anydpi-v26/ic_launcher.xml" />
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/sabaos/core/service/MDMService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="483">
+          <caret line="33" column="16" selection-start-line="33" selection-start-column="16" selection-end-line="33" selection-end-column="16" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/splash.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="270">
+          <caret line="18" column="38" selection-start-line="18" selection-start-column="38" selection-end-line="18" selection-end-column="38" />
+        </state>
+      </provider>
+      <provider editor-type-id="android-designer2" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/settings.gradle">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/build.gradle">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="300">
+          <caret line="20" column="42" selection-start-line="20" selection-start-column="42" selection-end-line="20" selection-end-column="42" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_battery.xml" />
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_memory.xml" />
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_mobile_data.xml" />
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/values/ic_launcher_background.xml">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/drawable/slide_to_left.xml" />
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/values-v21/styles.xml">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/sabaos/core/MemoryActivity.java" />
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/sabaos/core/MobileDataActivity.java" />
+    <entry file="jar://$PROJECT_DIR$/../../../Android/sdk-2018/Sdk/platforms/android-28/android.jar!/android/app/Activity.class" />
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/values/integers.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="30">
+          <caret line="2" column="58" selection-start-line="2" selection-start-column="58" selection-end-line="2" selection-end-column="58" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/anim/slide_to_left.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="75">
+          <caret line="5" column="6" selection-start-line="5" selection-start-column="6" selection-end-line="5" selection-end-column="6" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/anim/slide_to_right.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="75">
+          <caret line="5" column="6" selection-start-line="5" selection-start-column="6" selection-end-line="5" selection-end-column="6" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/anim/slide_from_left.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="75">
+          <caret line="5" column="6" selection-start-line="5" selection-start-column="6" selection-end-line="5" selection-end-column="6" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/anim/slide_from_right.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="75">
+          <caret line="5" column="6" selection-start-line="5" selection-start-column="6" selection-end-line="5" selection-end-column="6" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/sabaos/core/BatteryActivity.java" />
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/values/styles.xml">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/drawable/custom_border.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="45">
+          <caret line="3" column="48" selection-start-line="3" selection-start-column="48" selection-end-line="3" selection-end-column="54" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/drawable/menu_style.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="75">
+          <caret line="5" column="34" selection-start-line="5" selection-start-column="34" selection-end-line="5" selection-end-column="34" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/values/colors.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="90">
+          <caret line="6" column="44" selection-start-line="6" selection-start-column="44" selection-end-line="6" selection-end-column="44" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/build.gradle">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="420">
+          <caret line="28" column="65" selection-start-line="28" selection-end-line="29" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/AndroidManifest.xml">
+      <provider editor-type-id="android-manifest" />
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="315">
+          <caret line="21" column="40" selection-start-line="21" selection-start-column="40" selection-end-line="21" selection-end-column="40" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/sabaos/core/MainActivity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="840">
+          <caret line="80" column="75" selection-start-line="80" selection-start-column="75" selection-end-line="80" selection-end-column="75" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/sabaos/core/service/WebSocketService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2250">
+          <caret line="182" selection-start-line="182" selection-end-line="182" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/sabaos/core/ShowMessageNotification.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="780">
+          <caret line="66" column="32" selection-start-line="66" selection-start-column="32" selection-end-line="66" selection-end-column="46" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/sabaos/core/init/InitializationActivity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="780">
+          <caret line="79" column="5" selection-start-line="79" selection-start-column="5" selection-end-line="79" selection-end-column="5" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_login.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="420">
+          <caret line="28" column="35" selection-start-line="28" selection-start-column="35" selection-end-line="28" selection-end-column="35" />
+        </state>
+      </provider>
+      <provider editor-type-id="android-designer2" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/sabaos/core/login/LoginActivity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1350">
+          <caret line="117" column="5" selection-start-line="117" selection-start-column="5" selection-end-line="117" selection-end-column="5" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_main.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2205">
+          <caret line="147" column="4" selection-start-line="147" selection-start-column="4" selection-end-line="147" selection-end-column="4" />
+        </state>
+      </provider>
+      <provider editor-type-id="android-designer2" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/menu/menu.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="30">
+          <caret line="2" column="27" selection-start-line="2" selection-end-line="3" />
+        </state>
+      </provider>
+      <provider editor-type-id="android-designer2" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/drawable/logo.png">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/sabaos/core/init/BootCompletedReceiver.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="225">
+          <caret line="21" column="39" selection-start-line="21" selection-end-line="22" />
+        </state>
+      </provider>
+    </entry>
+  </component>
+  <component name="masterDetails">
+    <states>
+      <state key="ProjectJDKs.UI">
+        <settings>
+          <last-edited>1.8</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+    </states>
+  </component>
+</project>

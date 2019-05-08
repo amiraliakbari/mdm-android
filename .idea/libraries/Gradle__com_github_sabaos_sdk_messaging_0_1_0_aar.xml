@@ -1,0 +1,12 @@
+<component name="libraryTable">
+  <library name="Gradle: com.github.sabaos-sdk:messaging:0.1.0@aar">
+    <CLASSES>
+      <root url="jar://$USER_HOME$/.gradle/caches/transforms-1/files-1.1/messaging-0.1.0.aar/1bed267451da7d5684cc0961a3db85ce/jars/classes.jar!/" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-1/files-1.1/messaging-0.1.0.aar/1bed267451da7d5684cc0961a3db85ce/res" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.github.sabaos-sdk/messaging/0.1.0/83faa1dd9aa8938e13487964b3d830ce220a5c1c/messaging-0.1.0-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>
