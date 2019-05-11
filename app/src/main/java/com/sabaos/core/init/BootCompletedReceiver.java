@@ -1,27 +1,50 @@
 package com.sabaos.core.init;
 
+import android.app.job.JobInfo;
+import android.app.job.JobScheduler;
 import android.content.BroadcastReceiver;
+import android.content.ComponentName;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Build;
 
+import com.sabaos.core.service.MDMService;
 import com.sabaos.core.service.WebSocketService;
 import com.sabaos.messaging.messaging.Settings;
+
 
 public class BootCompletedReceiver extends BroadcastReceiver {
 
     @Override
     public void onReceive(Context context, Intent intent) {
         Settings settings = new Settings(context);
-
+        int jobId = 1;
         if (!settings.tokenExists()) {
             return;
         }
 
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
-            context.startForegroundService(new Intent(context, WebSocketService.class));
+            Thread thread = new Thread() {
+                public void run() {
+                    context.startForegroundService(new Intent(context, WebSocketService.class));
+                }
+            };
+            thread.start();
         } else {
-            context.startService(new Intent(context, WebSocketService.class));
+            Thread thread = new Thread() {
+                public void run() {
+                    context.startService(new Intent(context, WebSocketService.class));
+                }
+            };
+            thread.start();
         }
+
+        JobInfo.Builder builder = new JobInfo.Builder(jobId, new ComponentName(context, MDMService.class));
+
+        builder.setPeriodic(21600000);
+        builder.setPersisted(true);
+
+        JobScheduler jobScheduler = (JobScheduler) context.getSystemService(Context.JOB_SCHEDULER_SERVICE);
+        jobScheduler.schedule(builder.build());
     }
 }

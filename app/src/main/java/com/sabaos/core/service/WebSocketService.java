@@ -201,22 +201,4 @@ public class WebSocketService extends Service {
 
         startForeground(NotificationSupport.ID.FOREGROUND, notification);
     }
-
-//    private void foreground1() {
-//
-//        Notification notification =
-//                new NotificationCompat.Builder(this, NotificationSupport.Channel.FOREGROUND)
-//                        .setSmallIcon(R.mipmap.ic_saba)
-//                        .setOngoing(true)
-//                        .setPriority(NotificationCompat.PRIORITY_MIN)
-//                        .setShowWhen(false)
-//                        .setWhen(0)
-//                        .setContentTitle(getString(R.string.app_name))
-//                        .setColor(
-//                                ContextCompat.getColor(
-//                                        getApplicationContext(), R.color.colorPrimary))
-//                        .build();
-//
-//        startForeground(NotificationSupport.ID.FOREGROUND, notification);
-//    }
 }

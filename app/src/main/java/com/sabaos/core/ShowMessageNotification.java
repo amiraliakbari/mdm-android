@@ -1,7 +1,6 @@
 package com.sabaos.core;
 
 import android.app.Notification;
-import android.app.NotificationChannel;
 import android.app.NotificationManager;
 import android.content.Context;
 import android.graphics.Color;
@@ -13,7 +12,6 @@ import com.sabaos.messaging.messaging.NotificationSupport;
 
 import androidx.annotation.RequiresApi;
 import androidx.core.app.NotificationCompat;
-import androidx.core.app.NotificationManagerCompat;
 import androidx.core.content.ContextCompat;
 
 public class ShowMessageNotification {

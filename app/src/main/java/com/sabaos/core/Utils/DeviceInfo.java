@@ -10,6 +10,7 @@ import java.util.ArrayList;
 public class DeviceInfo {
 
     private static final String applicationVersion = "0.1";
+
     public String getApplicationVersion() {
 
         return applicationVersion;
@@ -69,7 +70,7 @@ public class DeviceInfo {
         return phoneIMEI;
     }
 
-    public String getPhoneSerialNumber(){
+    public String getPhoneSerialNumber() {
 
         String phoneSerialNumber = null;
         try {
@@ -87,7 +88,7 @@ public class DeviceInfo {
         return phoneSerialNumber;
     }
 
-    public String getHWSerialNumber(){
+    public String getHWSerialNumber() {
 
         String hwSerialNumber = null;
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
@@ -99,12 +100,12 @@ public class DeviceInfo {
         return hwSerialNumber;
     }
 
-    public String getOsName(){
+    public String getOsName() {
 
         return Build.VERSION.RELEASE;
     }
 
-    public String getPhoneModel(){
+    public String getPhoneModel() {
 
         return Build.MANUFACTURER
                 + " " + Build.MODEL;
