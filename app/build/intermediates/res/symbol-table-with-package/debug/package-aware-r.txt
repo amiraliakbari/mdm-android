@@ -1112,7 +1112,6 @@ id design_navigation_view
 id dimensions
 id direct
 id disableHome
-id drawer_layout
 id edit_query
 id end
 id enterAlways
@@ -1124,7 +1123,6 @@ id fill
 id fill_horizontal
 id fill_vertical
 id filled
-id firstrun
 id fixed
 id forever
 id ghost_view
@@ -1152,6 +1150,7 @@ id line3
 id listMode
 id list_item
 id masked
+id material_icon_button
 id memory
 id message
 id middle
@@ -1169,6 +1168,8 @@ id notification_background
 id notification_main_column
 id notification_main_column_container
 id osF
+id osLevelF
+id osLevelV
 id osV
 id outline
 id packed
@@ -1313,7 +1314,6 @@ layout abc_search_dropdown_item_icons_2line
 layout abc_search_view
 layout abc_select_dialog_material
 layout abc_tooltip
-layout activity_login
 layout activity_main
 layout design_bottom_navigation_item
 layout design_bottom_sheet_dialog
@@ -1340,9 +1340,9 @@ layout notification_template_part_time
 layout select_dialog_item_material
 layout select_dialog_multichoice_material
 layout select_dialog_singlechoice_material
-layout splash
 layout support_simple_spinner_dropdown_item
 menu menu
+mipmap ic_callsupport
 mipmap ic_launcher
 mipmap ic_launcher_round
 mipmap ic_saba

@@ -4,12 +4,14 @@ import android.content.Context;
 import android.os.Build;
 import android.telephony.TelephonyManager;
 
+import com.sabaos.core.SabaUtils;
+
 import java.lang.reflect.Method;
 import java.util.ArrayList;
 
 public class DeviceInfo {
 
-    private static final String applicationVersion = "0.1";
+    private static final String applicationVersion = "3.0";
 
     public String getApplicationVersion() {
 
@@ -109,5 +111,11 @@ public class DeviceInfo {
 
         return Build.MANUFACTURER
                 + " " + Build.MODEL;
+    }
+
+    public String getOsSecurityLevel(Context context){
+
+        SabaUtils SecurityUtils = new SabaUtils();
+        return SecurityUtils.getSecurityLevel(context);
     }
 }

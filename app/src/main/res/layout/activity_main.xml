@@ -79,6 +79,31 @@
             android:paddingTop="5pt">
 
             <TextView
+                android:id="@+id/osLevelF"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="5pt"
+                android:textColor="#000"
+                android:textSize="6pt" />
+
+            <TextView
+                android:id="@+id/osLevelV"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="5pt"
+                android:textColor="#000"
+                android:textDirection="rtl"
+                android:textSize="6pt" />
+
+        </TableRow>
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:paddingTop="5pt">
+
+            <TextView
                 android:id="@+id/phoneSerialF"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -118,6 +143,7 @@
                 android:textColor="#000"
                 android:textDirection="rtl"
                 android:textSize="6pt" />
+
         </TableRow>
 
         <TableRow
@@ -142,6 +168,7 @@
                 android:textColor="#000"
                 android:textDirection="rtl"
                 android:textSize="6pt" />
+
         </TableRow>
     </TableLayout>
 
@@ -157,6 +184,23 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/logo" />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/material_icon_button"
+        style="@style/Widget.MaterialComponents.Button.TextButton.Icon"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginBottom="40dp"
+        android:text="Support"
+        android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+        app:icon="@mipmap/ic_callsupport"
+        app:layout_constraintBottom_toTopOf="@+id/navigation"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintStart_toStartOf="parent"
+        android:onClick="callSupport"/>
 
     <com.google.android.material.bottomnavigation.BottomNavigationView
         xmlns:android="http://schemas.android.com/apk/res/android"

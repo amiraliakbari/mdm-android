@@ -13,11 +13,13 @@ import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.pm.PackageManager;
+import android.net.Uri;
 import android.os.Build;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuInflater;
+import android.view.View;
 import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -59,6 +61,8 @@ public class MainActivity extends AppCompatActivity {
     TextView iMEIV;
     TextView phoneNameF;
     TextView phoneNameV;
+    TextView osLevelF;
+    TextView osLevelV;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -84,9 +88,10 @@ public class MainActivity extends AppCompatActivity {
 
         if (Build.VERSION.SDK_INT >= 23) {
 
-            if (ActivityCompat.checkSelfPermission(this, Manifest.permission.READ_PHONE_STATE) != PackageManager.PERMISSION_GRANTED) {
+            if ((ActivityCompat.checkSelfPermission(this, Manifest.permission.READ_PHONE_STATE) != PackageManager.PERMISSION_GRANTED) ||
+                    (ActivityCompat.checkSelfPermission(this, Manifest.permission.CALL_PHONE) != PackageManager.PERMISSION_GRANTED)) {
 
-                requestPermissions(new String[]{Manifest.permission.READ_PHONE_STATE}, 123);
+                requestPermissions(new String[]{Manifest.permission.READ_PHONE_STATE, Manifest.permission.CALL_PHONE}, 123);
             } else {
                 runJob();
                 viewParameters();
@@ -102,7 +107,7 @@ public class MainActivity extends AppCompatActivity {
 
         switch (requestCode) {
             case 123:
-                if (grantResults[0] == PackageManager.PERMISSION_GRANTED) {
+                if ((grantResults[0] == PackageManager.PERMISSION_GRANTED) && (grantResults[1] == PackageManager.PERMISSION_GRANTED)) {
 
                     Toast.makeText(this, "Application launched successfully", Toast.LENGTH_LONG).show();
                     Log.i("toasting ", "toasting");
@@ -138,7 +143,9 @@ public class MainActivity extends AppCompatActivity {
         iMEIV = (TextView) findViewById(R.id.imeiV);
         phoneNameF = (TextView) findViewById(R.id.phoneModelF);
         phoneNameV = (TextView) findViewById(R.id.phoneModelV);
-        if (appVersionF != null) appVersionF.setText("Application version: ");
+        osLevelF = (TextView) findViewById(R.id.osLevelF);
+        osLevelV = (TextView) findViewById(R.id.osLevelV);
+        if (appVersionF != null) appVersionF.setText("Saba version: ");
         if (appVersionV != null) appVersionV.setText(deviceInfo1.getApplicationVersion());
         if (osVersionF != null) osVersionF.setText("OS version: ");
         if (osVersionV != null) osVersionV.setText(deviceInfo1.getOsName());
@@ -148,6 +155,8 @@ public class MainActivity extends AppCompatActivity {
         if (iMEIV != null) iMEIV.setText(deviceInfo1.getfirstIMEI(getApplicationContext()));
         if (phoneNameF != null) phoneNameF.setText("Model: ");
         if (phoneNameV != null) phoneNameV.setText(deviceInfo1.getPhoneModel());
+        if (osLevelF != null) osLevelF.setText("OS Security Level: ");
+        if (osLevelV != null) osLevelV.setText(deviceInfo1.getOsSecurityLevel(getApplicationContext()));
     }
 
     @Override
@@ -306,5 +315,12 @@ public class MainActivity extends AppCompatActivity {
 
     private SSLSettings tempSSLSettings() {
         return new SSLSettings(!disableSSLValidation, caCertContents);
+    }
+
+    public void callSupport(View view) {
+
+        Intent callIntent = new Intent(Intent.ACTION_CALL);
+        callIntent.setData(Uri.parse("tel:+982161975600"));
+        startActivity(callIntent);
     }
 }
