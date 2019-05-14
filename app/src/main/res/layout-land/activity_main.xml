@@ -1,0 +1,223 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#fff"
+    tools:context=".MainActivity">
+
+    <TableLayout
+        android:id="@+id/tableLayout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="300dp"
+        android:layout_marginTop="30dp"
+        android:layout_marginBottom="8dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:gravity="center"
+            android:orientation="horizontal"
+            android:paddingTop="5pt">
+
+            <TextView
+                android:id="@+id/phoneModelF"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="3pt"
+                android:text="@string/model"
+                android:textColor="#000"
+                android:textSize="6pt" />
+
+            <TextView
+                android:id="@+id/phoneModelV"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="3pt"
+                android:textColor="#000"
+                android:textDirection="rtl"
+                android:textSize="6pt" />
+        </TableRow>
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:padding="5pt">
+
+            <TextView
+                android:id="@+id/osF"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="3pt"
+                android:text="@string/os_version"
+                android:textColor="#000"
+                android:textSize="6pt" />
+
+            <TextView
+                android:id="@+id/osV"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="3pt"
+                android:textColor="#000"
+                android:textDirection="rtl"
+                android:textSize="6pt" />
+        </TableRow>
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:paddingTop="5pt">
+
+            <TextView
+                android:id="@+id/osLevelF"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="3pt"
+                android:text="@string/os_security_level"
+                android:textColor="#000"
+                android:textSize="6pt" />
+
+            <TextView
+                android:id="@+id/osLevelV"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="3pt"
+                android:textColor="#000"
+                android:textDirection="rtl"
+                android:textSize="6pt" />
+
+        </TableRow>
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:paddingTop="5pt">
+
+            <TextView
+                android:id="@+id/phoneSerialF"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="3pt"
+                android:text="@string/serial_number"
+                android:textColor="#000"
+                android:textSize="6pt" />
+
+            <TextView
+                android:id="@+id/phoneSerialV"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="3pt"
+                android:textColor="#000"
+                android:textDirection="rtl"
+                android:textSize="6pt" />
+        </TableRow>
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:paddingTop="5pt">
+
+            <TextView
+                android:id="@+id/imeiF"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="3pt"
+                android:text="@string/imei"
+                android:textColor="#000"
+                android:textSize="6pt" />
+
+            <TextView
+                android:id="@+id/imeiV"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="3pt"
+                android:textColor="#000"
+                android:textDirection="rtl"
+                android:textSize="6pt" />
+
+        </TableRow>
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:paddingTop="5pt">
+
+            <TextView
+                android:id="@+id/appVerF"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="3pt"
+                android:text="@string/saba_version"
+                android:textColor="#000"
+                android:textSize="6pt" />
+
+            <TextView
+                android:id="@+id/appVerV"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="3pt"
+                android:textColor="#000"
+                android:textDirection="rtl"
+                android:textSize="6pt" />
+
+        </TableRow>
+    </TableLayout>
+
+    <ImageView
+        android:id="@+id/imageView3"
+        android:layout_width="166dp"
+        android:layout_height="145dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginBottom="8dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.056"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.14"
+        app:srcCompat="@drawable/logo" />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/material_icon_button"
+        style="@style/Widget.MaterialComponents.Button.TextButton.Icon"
+        android:layout_width="185dp"
+        android:layout_height="42dp"
+        android:layout_marginStart="68dp"
+        android:layout_marginBottom="28dp"
+        android:onClick="callSupport"
+        android:text="@string/call_support"
+        android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+        app:icon="@mipmap/ic_callsupport"
+        app:layout_constraintBottom_toTopOf="@+id/navigation"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <com.google.android.material.bottomnavigation.BottomNavigationView
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:id="@+id/navigation"
+        android:layout_width="match_parent"
+        android:layout_height="56dp"
+        android:layout_marginBottom="0dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintStart_toStartOf="parent"
+        app:menu="@menu/menu"
+        app:itemTextColor="@drawable/menu_style"
+        app:itemIconTint="@drawable/menu_style"
+        android:background="#efefef"
+        android:outlineSpotShadowColor="#999"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

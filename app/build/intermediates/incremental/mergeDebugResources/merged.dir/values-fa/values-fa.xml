@@ -27,6 +27,23 @@
     <string msgid="3421042268587513524" name="abc_shareactionprovider_share_with">"اشتراک‌گذاری با"</string>
     <string msgid="3300176832234831527" name="abc_shareactionprovider_share_with_application">"اشتراک‌گذاری با <ns1:g id="APPLICATION_NAME">%s</ns1:g>"</string>
     <string msgid="1603543279005712093" name="abc_toolbar_collapse_description">"کوچک کردن"</string>
+    <string name="app_name">سبا</string>
+    <string name="battery_button">باتری</string>
+    <string name="call_support">تماس با پشتیبانی</string>
+    <string name="data_string">مصرف داده: </string>
+    <string name="grouped_message">Received %d messages while being disconnected</string>
+    <string name="grouped_notification_text">New Messages</string>
+    <string name="home_button">خانه</string>
+    <string name="imei">شماره IMEI:</string>
+    <string name="memory_button">حافظه</string>
+    <string name="memory_string">حافظه: </string>
+    <string name="missed_messages">Missed messages</string>
+    <string name="model">مدل:</string>
+    <string name="network_button">شبکه</string>
+    <string name="os_security_level">سطح امنیت سیستم عامل:</string>
+    <string name="os_version">نسخه سیستم عامل:</string>
+    <string name="saba_version">نسخه سبا:</string>
     <string msgid="146198913615257606" name="search_menu_title">"جستجو"</string>
+    <string name="serial_number">شماره سریال:</string>
     <string msgid="7988687684186075107" name="status_bar_notification_info_overflow">"999+"</string>
 </resources>

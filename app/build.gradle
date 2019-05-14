@@ -42,4 +42,6 @@ dependencies {
 
     implementation 'com.github.sabaos-sdk:core:0.1.4'
 
+    implementation 'com.github.lecho:hellocharts-library:1.5.8@aar'
+
 }

@@ -13,6 +13,7 @@ import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.pm.PackageManager;
+import android.net.TrafficStats;
 import android.net.Uri;
 import android.os.Build;
 import android.os.Bundle;
@@ -21,6 +22,7 @@ import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.View;
 import android.widget.EditText;
+import android.widget.ProgressBar;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -51,17 +53,11 @@ public class MainActivity extends AppCompatActivity {
     private boolean disableSSLValidation;
     private String caCertContents;
     int jobId = 1;
-    TextView appVersionF;
     TextView appVersionV;
     TextView osVersionV;
-    TextView osVersionF;
-    TextView phoneSerialF;
     TextView phoneSerialV;
-    TextView iMEIF;
     TextView iMEIV;
-    TextView phoneNameF;
     TextView phoneNameV;
-    TextView osLevelF;
     TextView osLevelV;
 
     @Override
@@ -82,6 +78,9 @@ public class MainActivity extends AppCompatActivity {
         };
         thread.start();
         checkPermission();
+//        DeviceInfo deviceInfo1 = new DeviceInfo();
+//        Toast.makeText(getApplicationContext(), String.valueOf(TrafficStats.getTotalRxBytes()), Toast.LENGTH_LONG).show();
+
     }
 
     private void checkPermission() {
@@ -133,29 +132,17 @@ public class MainActivity extends AppCompatActivity {
     public void viewParameters() {
 
         DeviceInfo deviceInfo1 = new DeviceInfo();
-        appVersionF = (TextView) findViewById(R.id.appVerF);
         appVersionV = (TextView) findViewById(R.id.appVerV);
         osVersionV = (TextView) findViewById(R.id.osV);
-        osVersionF = (TextView) findViewById(R.id.osF);
-        phoneSerialF = (TextView) findViewById(R.id.phoneSerialF);
         phoneSerialV = (TextView) findViewById(R.id.phoneSerialV);
-        iMEIF = (TextView) findViewById(R.id.imeiF);
         iMEIV = (TextView) findViewById(R.id.imeiV);
-        phoneNameF = (TextView) findViewById(R.id.phoneModelF);
         phoneNameV = (TextView) findViewById(R.id.phoneModelV);
-        osLevelF = (TextView) findViewById(R.id.osLevelF);
         osLevelV = (TextView) findViewById(R.id.osLevelV);
-        if (appVersionF != null) appVersionF.setText("Saba version: ");
         if (appVersionV != null) appVersionV.setText(deviceInfo1.getApplicationVersion());
-        if (osVersionF != null) osVersionF.setText("OS version: ");
         if (osVersionV != null) osVersionV.setText(deviceInfo1.getOsName());
-        if (phoneSerialF != null) phoneSerialF.setText("Serial number: ");
         if (phoneSerialV != null) phoneSerialV.setText(deviceInfo1.getPhoneSerialNumber());
-        if (iMEIF != null) iMEIF.setText("IMEI: ");
         if (iMEIV != null) iMEIV.setText(deviceInfo1.getfirstIMEI(getApplicationContext()));
-        if (phoneNameF != null) phoneNameF.setText("Model: ");
         if (phoneNameV != null) phoneNameV.setText(deviceInfo1.getPhoneModel());
-        if (osLevelF != null) osLevelF.setText("OS Security Level: ");
         if (osLevelV != null) osLevelV.setText(deviceInfo1.getOsSecurityLevel(getApplicationContext()));
     }
 
@@ -202,14 +189,14 @@ public class MainActivity extends AppCompatActivity {
         response = response.substring(0, Math.min(200, response.length()));
     }
 
-    private void dialog(String message) {
-        new AlertDialog.Builder(this)
-                .setTitle(R.string.oops)
-                .setMessage(message)
-                .setPositiveButton(R.string.retry, (a, b) -> tryAuthenticate())
-                .setNegativeButton(R.string.logout, (a, b) -> showLogin())
-                .show();
-    }
+//    private void dialog(String message) {
+//        new AlertDialog.Builder(this)
+//                .setTitle(R.string.oops)
+//                .setMessage(message)
+//                .setPositiveButton(R.string.retry, (a, b) -> tryAuthenticate())
+//                .setNegativeButton(R.string.logout, (a, b) -> showLogin())
+//                .show();
+//    }
 
     private void authenticated(User user) {
         com.sabaos.messaging.messaging.log.Log.i("Authenticated as " + user.getName());
@@ -309,9 +296,9 @@ public class MainActivity extends AppCompatActivity {
     private void onCancelClientDialog(DialogInterface dialog, int which) {
     }
 
-    private String versionError(String url, ApiException exception) {
-        return getString(R.string.version_failed, url + "/version", exception.code());
-    }
+//    private String versionError(String url, ApiException exception) {
+//        return getString(R.string.version_failed, url + "/version", exception.code());
+//    }
 
     private SSLSettings tempSSLSettings() {
         return new SSLSettings(!disableSSLValidation, caCertContents);

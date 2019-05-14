@@ -530,6 +530,7 @@
     <integer name="mtrl_btn_anim_duration_ms">100</integer>
     <integer name="mtrl_chip_anim_duration">100</integer>
     <integer name="mtrl_tab_indicator_anim_duration_ms">250</integer>
+    <integer name="progressbar_value">0</integer>
     <integer name="show_password_duration">200</integer>
     <integer name="slide_animation_duration">300</integer>
     <integer name="status_bar_notification_info_maxnum">999</integer>
@@ -572,86 +573,38 @@
     <string name="abc_shareactionprovider_share_with">Share with</string>
     <string name="abc_shareactionprovider_share_with_application">Share with <ns1:g example="Mail" id="application_name">%s</ns1:g></string>
     <string name="abc_toolbar_collapse_description">Collapse</string>
-    <string name="advanced_settings">Advanced Settings</string>
-    <string name="all_messages">All Messages</string>
-    <string name="app_description">Saba application</string>
     <string name="app_name">Saba</string>
     <string name="appbar_scrolling_view_behavior" translatable="false">com.google.android.material.appbar.AppBarLayout$ScrollingViewBehavior</string>
-    <string name="auth_failed">Server returned 401 unauthorized while trying to get current user. This can be caused by deleting the client for this session.</string>
+    <string name="battery_button">battery</string>
     <string name="bottom_sheet_behavior" translatable="false">com.google.android.material.bottomsheet.BottomSheetBehavior</string>
-    <string name="cancel">Cancel</string>
+    <string name="call_support">Call Support</string>
     <string name="character_counter_content_description">Character limit exceeded %1$d of %2$d</string>
     <string name="character_counter_pattern" translatable="false">%1$d / %2$d</string>
-    <string name="check_url">Check URL</string>
-    <string name="connection">%s@%s</string>
-    <string name="create">Create</string>
-    <string name="create_client_failed">Create client failed</string>
-    <string name="create_client_message">Chose a name for your session</string>
-    <string name="create_client_title">Client Name</string>
-    <string name="created_client">Created client</string>
-    <string name="default_notification_channel_id" translatable="false">SCM_default_channel</string>
-    <string name="delete_all">delete all</string>
-    <string name="delete_logs">delete logs</string>
-    <string name="delete_message">delete message</string>
-    <string name="disabled_validate_ssl">Disable SSL Validation</string>
-    <string name="done">Done</string>
+    <string name="data_string">Data:</string>
     <string name="fab_transformation_scrim_behavior" translatable="false">com.google.android.material.transformation.FabTransformationScrimBehavior</string>
     <string name="fab_transformation_sheet_behavior" translatable="false">com.google.android.material.transformation.FabTransformationSheetBehavior</string>
-    <string name="fcm_message">Saba Message</string>
     <string name="grouped_message">Received %d messages while being disconnected</string>
     <string name="grouped_notification_text">New Messages</string>
     <string name="hide_bottom_view_on_scroll_behavior" translatable="false">com.google.android.material.behavior.HideBottomViewOnScrollBehavior</string>
-    <string name="http_warning">Using http is insecure and it\'s recommend to use https instead. Use your favorite search engine to get more information about this topic.</string>
-    <string name="i_understand">I Understand</string>
-    <string name="login">Login</string>
-    <string name="logout">Logout</string>
-    <string name="logout_confirm">Do you really want to logout?</string>
-    <string name="logs">Logs</string>
-    <string name="message_image_desc">the image of a message</string>
+    <string name="home_button">Home</string>
+    <string name="imei">IMEI:</string>
+    <string name="memory_button">memory</string>
+    <string name="memory_string">Memory:</string>
     <string name="missed_messages">Missed messages</string>
+    <string name="model">Model:</string>
     <string name="mtrl_chip_close_icon_content_description">Remove %1$s</string>
-    <string name="nav_header_desc">Navigation header</string>
-    <string name="navigation_drawer_close">Close navigation drawer</string>
-    <string name="navigation_drawer_open">Open navigation drawer</string>
-    <string name="no_certificate_selected">No certificate selected</string>
-    <string name="not_available">Cannot connect to %s</string>
-    <string name="oops">Oops</string>
-    <string name="other_error">Could not get current user. Server (%s) responded with code %d: body (first 200 chars): %s</string>
-    <string name="password">Password</string>
+    <string name="network_button">network</string>
+    <string name="os_security_level">OS Security Level:</string>
+    <string name="os_version">OS version:</string>
     <string name="password_toggle_content_description">Show password</string>
     <string name="path_password_eye" translatable="false">M12,4.5C7,4.5 2.73,7.61 1,12c1.73,4.39 6,7.5 11,7.5s9.27,-3.11 11,-7.5c-1.73,-4.39 -6,-7.5 -11,-7.5zM12,17c-2.76,0 -5,-2.24 -5,-5s2.24,-5 5,-5 5,2.24 5,5 -2.24,5 -5,5zM12,9c-1.66,0 -3,1.34 -3,3s1.34,3 3,3 3,-1.34 3,-3 -1.34,-3 -3,-3z</string>
     <string name="path_password_eye_mask_strike_through" translatable="false">M2,4.27 L19.73,22 L22.27,19.46 L4.54,1.73 L4.54,1 L23,1 L23,23 L1,23 L1,4.27 Z</string>
     <string name="path_password_eye_mask_visible" translatable="false">M2,4.27 L2,4.27 L4.54,1.73 L4.54,1.73 L4.54,1 L23,1 L23,23 L1,23 L1,4.27 Z</string>
     <string name="path_password_strike_through" translatable="false">M3.27,4.27 L19.74,20.74</string>
-    <string name="please_install_file_browser">Please install a file browser</string>
-    <string name="refresh_all">refresh all</string>
-    <string name="remove_ca_certificate">Remove CA Certificate</string>
-    <string name="retry">Retry</string>
-    <string name="saba_cloud_messaging_logo">Saba Cloud Messaging logo</string>
+    <string name="saba_version">Saba version:</string>
     <string name="search_menu_title">Search</string>
-    <string name="select_ca_certificate">Select CA Certificate</string>
-    <string name="select_ca_failed">Failed to read CA: %s</string>
-    <string name="select_ca_file">Select a Certificate File</string>
-    <string name="server_url">server URL</string>
-    <string name="show_advanced">Show Advanced Options</string>
+    <string name="serial_number">Serial Number:</string>
     <string name="status_bar_notification_info_overflow">999+</string>
-    <string name="text_main_activity">This app is used for receiving messages and showing them as notifications. In order to send a message to other devices, you should use the respective Controller app.</string>
-    <string name="title_activity_logs">Logs</string>
-    <string name="title_activity_main">MainActivity</string>
-    <string name="username">Username</string>
-    <string name="version_failed">Request to \'%s\' failed with status code %d</string>
-    <string name="versions">sabacloudmessaging/android v%s; sabacloudmessaging/server v%s</string>
-    <string name="warning">Warning</string>
-    <string name="websocket_closed">WebSocket closed; The client-token could be invalidated, please re-login</string>
-    <string name="websocket_could_not_connect">Could not connect %s</string>
-    <string name="websocket_failed">Connection failed, trying again in %d minutes</string>
-    <string name="websocket_init">Initializing</string>
-    <string name="websocket_listening">Listening to %s</string>
-    <string name="websocket_no_network">Waiting for network</string>
-    <string name="welcome">Welcome to Saba Messaging Platform. This variation uses FCM to deliver messages.</string>
-    <string name="welcome_text">Saba</string>
-    <string name="wronguserpw">There is no user with this username and password</string>
-    <string name="yes">Yes</string>
     <style name="AlertDialog.AppCompat" parent="Base.AlertDialog.AppCompat"/>
     <style name="AlertDialog.AppCompat.Light" parent="Base.AlertDialog.AppCompat.Light"/>
     <style name="Animation.AppCompat.Dialog" parent="Base.Animation.AppCompat.Dialog"/>

@@ -15,10 +15,12 @@ import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
 import com.sabaos.core.Utils.DeviceInfo;
 
+import lecho.lib.hellocharts.view.PieChartView;
+
 
 public class MDMService extends JobService {
 
-
+    PieChartView pieChartView;
     @Override
     public boolean onStartJob(final JobParameters jobParameters) {
 

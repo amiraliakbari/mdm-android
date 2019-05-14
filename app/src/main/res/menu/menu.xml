@@ -1,14 +1,14 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
     <item android:id="@+id/home"
-        android:title="Home"
+        android:title="@string/home_button"
         android:icon="@drawable/ic_home_active" />
     <item android:id="@+id/memory"
-        android:title="Memory"
+        android:title="@string/memory_button"
         android:icon="@drawable/ic_memory_active" />
     <item android:id="@+id/battery"
-        android:title="Battery"
+        android:title="@string/battery_button"
         android:icon="@drawable/ic_battery_active" />
     <item android:id="@+id/network"
-        android:title="Network"
+        android:title="@string/network_button"
         android:icon="@drawable/ic_network_active"/>
 </menu>
