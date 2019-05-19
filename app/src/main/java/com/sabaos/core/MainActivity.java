@@ -40,6 +40,8 @@ import com.sabaos.messaging.messaging.api.Callback;
 import com.sabaos.messaging.messaging.api.ClientFactory;
 import com.sabaos.messaging.messaging.log.UncaughtExceptionHandler;
 
+import java.util.regex.Pattern;
+
 import static com.sabaos.messaging.messaging.api.Callback.callInUI;
 
 
@@ -135,7 +137,12 @@ public class MainActivity extends AppCompatActivity {
         osLevelV = (TextView) findViewById(R.id.osLevelV);
         if (appVersionV != null) appVersionV.setText(deviceInfo1.getApplicationVersion());
         if (osVersionV != null) osVersionV.setText(deviceInfo1.getOsName());
-        if (phoneSerialV != null) phoneSerialV.setText(deviceInfo1.getPhoneSerialNumber());
+        if ((phoneSerialV != null) && stringContainsNumber(deviceInfo1.getPhoneSerialNumber())) phoneSerialV.setText(deviceInfo1.getPhoneSerialNumber());
+        else {
+            TextView phoneSerialF = (TextView) findViewById(R.id.phoneSerialF);
+            phoneSerialF.setVisibility(View.INVISIBLE);
+            phoneSerialV.setVisibility(View.INVISIBLE);
+        }
         if (iMEIV != null) iMEIV.setText(deviceInfo1.getfirstIMEI(getApplicationContext()));
         if (phoneNameV != null) phoneNameV.setText(deviceInfo1.getPhoneModel());
         if (osLevelV != null) osLevelV.setText(deviceInfo1.getOsSecurityLevel(getApplicationContext()));
@@ -290,5 +297,10 @@ public class MainActivity extends AppCompatActivity {
         Intent callIntent = new Intent(Intent.ACTION_CALL);
         callIntent.setData(Uri.parse("tel:+982161975600"));
         startActivity(callIntent);
+    }
+
+    public boolean stringContainsNumber( String s )
+    {
+        return Pattern.compile( "[0-9]" ).matcher( s ).find();
     }
 }
