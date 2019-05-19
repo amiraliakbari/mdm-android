@@ -1,6 +1,5 @@
 package com.sabaos.core;
 
-import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.app.ActivityCompat;
 
@@ -13,7 +12,6 @@ import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.pm.PackageManager;
-import android.net.TrafficStats;
 import android.net.Uri;
 import android.os.Build;
 import android.os.Bundle;
@@ -22,7 +20,6 @@ import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.View;
 import android.widget.EditText;
-import android.widget.ProgressBar;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -78,8 +75,6 @@ public class MainActivity extends AppCompatActivity {
         };
         thread.start();
         checkPermission();
-//        DeviceInfo deviceInfo1 = new DeviceInfo();
-//        Toast.makeText(getApplicationContext(), String.valueOf(TrafficStats.getTotalRxBytes()), Toast.LENGTH_LONG).show();
 
     }
 
@@ -189,23 +184,13 @@ public class MainActivity extends AppCompatActivity {
         response = response.substring(0, Math.min(200, response.length()));
     }
 
-//    private void dialog(String message) {
-//        new AlertDialog.Builder(this)
-//                .setTitle(R.string.oops)
-//                .setMessage(message)
-//                .setPositiveButton(R.string.retry, (a, b) -> tryAuthenticate())
-//                .setNegativeButton(R.string.logout, (a, b) -> showLogin())
-//                .show();
-//    }
-
     private void authenticated(User user) {
         com.sabaos.messaging.messaging.log.Log.i("Authenticated as " + user.getName());
 
         settings.user(user.getName(), user.isAdmin());
         requestVersion(
                 () -> {
-//                    startActivity(new Intent(this, MainActivity.class));
-//                    finish();
+
                 });
 
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
@@ -295,10 +280,6 @@ public class MainActivity extends AppCompatActivity {
 
     private void onCancelClientDialog(DialogInterface dialog, int which) {
     }
-
-//    private String versionError(String url, ApiException exception) {
-//        return getString(R.string.version_failed, url + "/version", exception.code());
-//    }
 
     private SSLSettings tempSSLSettings() {
         return new SSLSettings(!disableSSLValidation, caCertContents);

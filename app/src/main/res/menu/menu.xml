@@ -4,11 +4,14 @@
         android:icon="@drawable/ic_home_active" />
     <item android:id="@+id/memory"
         android:title="@string/memory_button"
-        android:icon="@drawable/ic_memory_active" />
+        android:icon="@drawable/ic_memory_active"
+        android:visible="false"/>
     <item android:id="@+id/battery"
         android:title="@string/battery_button"
-        android:icon="@drawable/ic_battery_active" />
+        android:icon="@drawable/ic_battery_active"
+        android:visible="false"/>
     <item android:id="@+id/network"
         android:title="@string/network_button"
-        android:icon="@drawable/ic_network_active"/>
+        android:icon="@drawable/ic_network_active"
+        android:visible="false"/>
 </menu>

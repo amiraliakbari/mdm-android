@@ -2,7 +2,7 @@ package com.sabaos.core.service;
 
 import android.app.Notification;
 import android.app.Service;
-import android.app.usage.NetworkStats;
+import android.content.ContentValues;
 import android.content.Context;
 import android.content.Intent;
 import android.content.IntentFilter;
@@ -15,8 +15,9 @@ import androidx.annotation.Nullable;
 import androidx.core.app.NotificationCompat;
 
 import com.sabaos.core.R;
-import com.sabaos.core.ShowMessageNotification;
+import com.sabaos.core.Utils.DBManager;
 import com.sabaos.core.Utils.DeviceInfo;
+import com.sabaos.core.Utils.SharedPref;
 import com.sabaos.messaging.client.api.MessageApi;
 import com.sabaos.messaging.client.model.Message;
 import com.sabaos.messaging.messaging.MissedMessageUtil;
@@ -29,15 +30,18 @@ import com.sabaos.messaging.messaging.log.UncaughtExceptionHandler;
 import com.sabaos.messaging.messaging.service.ReconnectListener;
 import com.sabaos.messaging.messaging.service.WebSocketConnection;
 
+import java.math.BigDecimal;
+import java.math.MathContext;
+import java.util.Calendar;
 import java.util.List;
+import java.util.Timer;
+import java.util.TimerTask;
 import java.util.concurrent.TimeUnit;
 import java.util.concurrent.atomic.AtomicInteger;
 
 public class WebSocketService extends Service {
 
-    //ShowMessageNotification class code is in the main part of the application.
-    //Creating an instance of it helps us call its function to show received messages as notfications.
-    ShowMessageNotification ShowMessage = new ShowMessageNotification();
+
     public static final String NEW_MESSAGE_BROADCAST =
             WebSocketService.class.getName() + ".NEW_MESSAGE";
 
@@ -80,14 +84,16 @@ public class WebSocketService extends Service {
 
         Log.i("Starting " + getClass().getSimpleName());
         super.onStartCommand(intent, flags, startId);
+        caculateMobileData();
+        saveMobileDataInSQLite();
         new Thread(this::startPushService).run();
+
 
         return START_STICKY;
     }
 
     private void startPushService() {
         UncaughtExceptionHandler.registerCurrentThread();
-//        foreground(getString(R.string.websocket_init));
 
         if (lastReceivedMessage.get() == NOT_LOADED) {
             missingMessageUtil.lastReceivedMessage(lastReceivedMessage::set);
@@ -162,11 +168,6 @@ public class WebSocketService extends Service {
             broadcast(message);
         }
         int size = messages.size();
-        ShowMessage.showNotification(this,
-                NotificationSupport.ID.GROUPED,
-                getString(R.string.missed_messages),
-                getString(R.string.grouped_message, size),
-                highestPriority);
     }
 
     private void onMessage(Message message) {
@@ -174,8 +175,6 @@ public class WebSocketService extends Service {
             lastReceivedMessage.set(message.getId());
         }
         broadcast(message);
-        ShowMessage.showNotification(this,
-                message.getId(), message.getTitle(), message.getMessage(), message.getPriority());
     }
 
     private void broadcast(Message message) {
@@ -190,43 +189,22 @@ public class WebSocketService extends Service {
     public IBinder onBind(Intent intent) {
         return null;
     }
+
     private void foreground() {
 
-
+        SharedPref sharedPref = new SharedPref(getApplicationContext());
         RemoteViews notificationLayout = new RemoteViews(getPackageName(), R.layout.notification_small);
         RemoteViews notificationLayoutExpanded = new RemoteViews(getPackageName(), R.layout.notification_large);
         DeviceInfo deviceInfo = new DeviceInfo();
-        String memoryStatus =  getString(R.string.memory_string) + " " + deviceInfo.showUsedMemory(getApplicationContext());
+        String memoryStatus = getString(R.string.memory_string) + " " + deviceInfo.showUsedMemory(getApplicationContext());
         notificationLayout.setProgressBar(R.id.progressBar1, 100, deviceInfo.showProgressValue(getApplicationContext()), false);
         notificationLayoutExpanded.setProgressBar(R.id.progressBar1, 100, deviceInfo.showProgressValue(getApplicationContext()), false);
         notificationLayout.setTextViewText(R.id.textView1, memoryStatus);
         notificationLayoutExpanded.setTextViewText(R.id.textView1, memoryStatus);
-        long dataLong = TrafficStats.getTotalTxBytes() + TrafficStats.getTotalRxBytes();
-        String dataString = "";
-        if (dataLong < 1000){
-            dataString = getString(R.string.data_string) + " " + new Double(dataLong).toString() + "B";
-        }else if (dataLong < 1000000){
-
-            dataString = getString(R.string.data_string) + " " + new Double(dataLong/1000).toString() + "KB";
-        }else if (dataLong< 1000000000){
-
-            dataString = getString(R.string.data_string) + " " + new Double(dataLong/1000000).toString() + "MB";
-        }else {
-
-            dataString = getString(R.string.data_string) + " " + new Double(dataLong/1000000000).toString() + "GB";
-        }
-        notificationLayout.setTextViewText(R.id.textView2, dataString);
-        notificationLayoutExpanded.setTextViewText(R.id.textView2, dataString);
+        notificationLayout.setTextViewText(R.id.textView2, getFormattedTraffic(new Long(sharedPref.loadData("count")).longValue()));
+        notificationLayoutExpanded.setTextViewText(R.id.textView2, getFormattedTraffic(new Long(sharedPref.loadData("count")).longValue()));
 
         Notification notification =
-//                new NotificationCompat.Builder(this, NotificationSupport.Channel.FOREGROUND)
-//                        .setSmallIcon(R.mipmap.ic_saba)
-//                        .setOngoing(true)
-//                        .setPriority(NotificationCompat.PRIORITY_MIN)
-//                        .setShowWhen(false)
-//                        .setWhen(0)
-//                        .setContentTitle(getString(R.string.app_name))
-//                        .build();
 
                 new NotificationCompat.Builder(this, NotificationSupport.Channel.FOREGROUND)
                         .setSmallIcon(R.mipmap.ic_saba)
@@ -236,5 +214,78 @@ public class WebSocketService extends Service {
                         .build();
 
         startForeground(NotificationSupport.ID.FOREGROUND, notification);
+    }
+
+    public String getFormattedTraffic(long dataLong) {
+
+        String dataString = "";
+        if (dataLong < 1000) {
+            dataString = getString(R.string.data_string) + " " + new Double(dataLong).toString() + "B";
+            return dataString;
+        } else if (dataLong < 1000000) {
+            double value = dataLong / 1000.0;
+            BigDecimal bd1 = new BigDecimal(value).round(new MathContext(3));
+            dataString = getString(R.string.data_string) + " " + bd1.toString() + "KB";
+            return dataString;
+        } else if (dataLong < 1000000000) {
+            double value = dataLong / 1000000.0;
+            BigDecimal bd1 = new BigDecimal(value).round(new MathContext(3));
+            dataString = getString(R.string.data_string) + " " + bd1.toString() + "MB";
+            return dataString;
+        } else {
+            double value = dataLong / 1000000000.0;
+            BigDecimal bd1 = new BigDecimal(value).round(new MathContext(4));
+            dataString = getString(R.string.data_string) + " " + bd1.toString() + "GB";
+            return dataString;
+        }
+    }
+
+    private void caculateMobileData() {
+
+        new Timer().schedule(new TimerTask() {
+
+            SharedPref sharedPref = new SharedPref(getApplicationContext());
+            long count = 0;
+            long firstValue = TrafficStats.getMobileTxBytes() + TrafficStats.getMobileRxBytes();
+            long networkTraffic = 0;
+
+            @Override
+            public void run() {
+                if (sharedPref.loadData("count").equals("empty")) {
+
+                    sharedPref.saveData("count", "0");
+                } else {
+                    String value = sharedPref.loadData("count");
+                    count = new Long(value).longValue();
+                    Log.i("count: " + count);
+                }
+                Log.i("runnable running");
+                long currentValue = TrafficStats.getMobileTxBytes() + TrafficStats.getMobileRxBytes();
+                networkTraffic = currentValue - firstValue;
+                Log.i("network Traffic: " + networkTraffic);
+                count += networkTraffic;
+                firstValue = currentValue;
+                sharedPref.saveData("count", String.valueOf(count));
+                Log.i("time " + Calendar.getInstance().getTime());
+                Log.i("initial value" + sharedPref.loadData("count"));
+            }
+        }, 0, 1000);
+    }
+
+
+    public void saveMobileDataInSQLite() {
+
+        new Timer().schedule(new TimerTask() {
+            @Override
+            public void run() {
+                SharedPref sharedPref = new SharedPref(getApplicationContext());
+                DBManager dbManager = new DBManager(getApplicationContext());
+                ContentValues values = new ContentValues();
+                values.put("date", Calendar.getInstance().getTime().toString());
+                values.put("data", sharedPref.loadData("count"));
+                long id = dbManager.insert(values);
+                Log.i("DB returned: " + id);
+            }
+        }, 0, 60000);
     }
 }
