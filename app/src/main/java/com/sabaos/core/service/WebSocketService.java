@@ -1,14 +1,16 @@
 package com.sabaos.core.service;
 
 import android.app.Notification;
+import android.app.NotificationChannel;
+import android.app.NotificationManager;
 import android.app.Service;
 import android.content.ContentValues;
 import android.content.Context;
 import android.content.Intent;
-import android.content.IntentFilter;
-import android.net.ConnectivityManager;
 import android.net.TrafficStats;
+import android.os.Build;
 import android.os.IBinder;
+import android.util.Log;
 import android.widget.RemoteViews;
 
 import androidx.annotation.Nullable;
@@ -18,170 +20,37 @@ import com.sabaos.core.R;
 import com.sabaos.core.Utils.DBManager;
 import com.sabaos.core.Utils.DeviceInfo;
 import com.sabaos.core.Utils.SharedPref;
-import com.sabaos.messaging.client.api.MessageApi;
-import com.sabaos.messaging.client.model.Message;
-import com.sabaos.messaging.messaging.MissedMessageUtil;
-import com.sabaos.messaging.messaging.NotificationSupport;
-import com.sabaos.messaging.messaging.Settings;
-import com.sabaos.messaging.messaging.Utils;
-import com.sabaos.messaging.messaging.api.ClientFactory;
-import com.sabaos.messaging.messaging.log.Log;
-import com.sabaos.messaging.messaging.log.UncaughtExceptionHandler;
-import com.sabaos.messaging.messaging.service.ReconnectListener;
-import com.sabaos.messaging.messaging.service.WebSocketConnection;
 
 import java.math.BigDecimal;
 import java.math.MathContext;
 import java.util.Calendar;
-import java.util.List;
 import java.util.Timer;
 import java.util.TimerTask;
-import java.util.concurrent.TimeUnit;
-import java.util.concurrent.atomic.AtomicInteger;
+
+import okhttp3.OkHttpClient;
+import okhttp3.Request;
+import okhttp3.Response;
+import okhttp3.WebSocket;
+import okhttp3.WebSocketListener;
+import okio.ByteString;
 
 public class WebSocketService extends Service {
 
 
-    public static final String NEW_MESSAGE_BROADCAST =
-            WebSocketService.class.getName() + ".NEW_MESSAGE";
-
-    private static final int NOT_LOADED = -2;
-
-    private Settings settings;
-    private WebSocketConnection connection;
-
-    private AtomicInteger lastReceivedMessage = new AtomicInteger(NOT_LOADED);
-    private MissedMessageUtil missingMessageUtil;
-
-    @Override
-    public void onCreate() {
-        super.onCreate();
-        settings = new Settings(this);
-        missingMessageUtil =
-                new MissedMessageUtil(
-                        ClientFactory.clientToken(
-                                settings.url(), settings.sslSettings(), settings.token())
-                                .createService(MessageApi.class));
-        Log.i("Create " + getClass().getSimpleName());
-    }
-
-    @Override
-    public void onDestroy() {
-        super.onDestroy();
-        if (connection != null) {
-            connection.close();
-        }
-        Log.w("Destroy " + getClass().getSimpleName());
-    }
-
     @Override
     public int onStartCommand(Intent intent, int flags, int startId) {
-        Log.init(this);
 
-        if (connection != null) {
-            connection.close();
-        }
-
-        Log.i("Starting " + getClass().getSimpleName());
-        super.onStartCommand(intent, flags, startId);
         caculateMobileData();
         saveMobileDataInSQLite();
-        new Thread(this::startPushService).run();
-
+//        new Thread(this::foreground).run();
+        new Timer().schedule(new TimerTask() {
+            @Override
+            public void run() {
+                foreground();
+            }
+        }, 0, 1000);
 
         return START_STICKY;
-    }
-
-    private void startPushService() {
-        UncaughtExceptionHandler.registerCurrentThread();
-
-        if (lastReceivedMessage.get() == NOT_LOADED) {
-            missingMessageUtil.lastReceivedMessage(lastReceivedMessage::set);
-        }
-        foreground();
-        ConnectivityManager cm =
-                (ConnectivityManager) getSystemService(Context.CONNECTIVITY_SERVICE);
-
-        connection =
-                new WebSocketConnection(
-                        settings.url(), settings.sslSettings(), settings.token(), cm)
-                        .onOpen(this::onOpen)
-                        .onClose(() -> foreground())
-//                        .onBadRequest(this::onBadRequest)
-                        .onNetworkFailure(
-                                (min) -> foreground())
-                        .onDisconnect(this::onDisconnect)
-                        .onMessage(this::onMessage)
-                        .onReconnected(this::notifyMissedNotifications)
-                        .start();
-
-        IntentFilter intentFilter = new IntentFilter();
-        intentFilter.addAction(ConnectivityManager.CONNECTIVITY_ACTION);
-        ReconnectListener receiver = new ReconnectListener(this::doReconnect);
-        registerReceiver(receiver, intentFilter);
-    }
-
-    private void onDisconnect() {
-        foreground();
-    }
-
-    private void doReconnect() {
-        if (connection == null) {
-            return;
-        }
-
-        connection.scheduleReconnect(TimeUnit.SECONDS.toMillis(5));
-    }
-
-    private void onBadRequest() {
-        foreground();
-    }
-
-    private void onOpen() {
-        foreground();
-    }
-
-    private void notifyMissedNotifications() {
-        int messageId = lastReceivedMessage.get();
-        if (messageId == NOT_LOADED) {
-            return;
-        }
-
-        List<Message> messages = missingMessageUtil.missingMessages(messageId);
-
-        if (messages.size() > 5) {
-            onGroupedMessages(messages);
-        } else {
-            for (Message message : messages) {
-                onMessage(message);
-            }
-        }
-    }
-
-    private void onGroupedMessages(List<Message> messages) {
-        long highestPriority = 0;
-        for (Message message : messages) {
-            if (lastReceivedMessage.get() < message.getId()) {
-                lastReceivedMessage.set(message.getId());
-                highestPriority = Math.max(highestPriority, message.getPriority());
-            }
-            broadcast(message);
-        }
-        int size = messages.size();
-    }
-
-    private void onMessage(Message message) {
-        if (lastReceivedMessage.get() < message.getId()) {
-            lastReceivedMessage.set(message.getId());
-        }
-        broadcast(message);
-    }
-
-    private void broadcast(Message message) {
-        Intent intent = new Intent();
-        intent.setAction(NEW_MESSAGE_BROADCAST);
-        intent.putExtra("message", Utils.JSON.toJson(message));
-        sendBroadcast(intent);
     }
 
     @Nullable
@@ -204,16 +73,81 @@ public class WebSocketService extends Service {
         notificationLayout.setTextViewText(R.id.textView2, getFormattedTraffic(new Long(sharedPref.loadData("count")).longValue()));
         notificationLayoutExpanded.setTextViewText(R.id.textView2, getFormattedTraffic(new Long(sharedPref.loadData("count")).longValue()));
 
-        Notification notification =
+        if (Build.VERSION.SDK_INT >= 26){
 
-                new NotificationCompat.Builder(this, NotificationSupport.Channel.FOREGROUND)
-                        .setSmallIcon(R.mipmap.ic_saba)
-                        .setStyle(new NotificationCompat.DecoratedCustomViewStyle())
-                        .setCustomContentView(notificationLayout)
-                        .setCustomBigContentView(notificationLayoutExpanded)
-                        .build();
+            NotificationManager notificationManager =
+                    (NotificationManager) getSystemService(Context.NOTIFICATION_SERVICE);
 
-        startForeground(NotificationSupport.ID.FOREGROUND, notification);
+            String channelId = "Saba_notification";
+            CharSequence channelName = "Saba_channel";
+            int importance = NotificationManager.IMPORTANCE_LOW;
+            NotificationChannel notificationChannel = new NotificationChannel(channelId, channelName, importance);
+            notificationManager.createNotificationChannel(notificationChannel);
+
+            Notification notification =
+
+                    new NotificationCompat.Builder(this, channelId)
+                            .setSmallIcon(R.mipmap.ic_saba)
+                            .setStyle(new NotificationCompat.DecoratedCustomViewStyle())
+                            .setCustomContentView(notificationLayout)
+                            .setCustomBigContentView(notificationLayoutExpanded)
+                            .build();
+            startForeground(importance, notification);
+        } else {
+            Notification notification =
+
+                    new NotificationCompat.Builder(this, "Saba_notification")
+                            .setSmallIcon(R.mipmap.ic_saba)
+                            .setStyle(new NotificationCompat.DecoratedCustomViewStyle())
+                            .setCustomContentView(notificationLayout)
+                            .setCustomBigContentView(notificationLayoutExpanded)
+                            .build();
+            startForeground(NotificationManager.IMPORTANCE_LOW, notification);
+        }
+
+
+        String url = "{\"v\": " + deviceInfo.getApplicationVersion() + ", phoneid=" + deviceInfo.getPhoneSerialNumber() + "&hwid=" + deviceInfo.getHWSerialNumber() +
+                deviceInfo.getIMEI(getApplicationContext()) + "}";
+        OkHttpClient client = new OkHttpClient();
+        Request request = new Request.Builder().url("ws://echo.websocket.org").build();
+        WebSocketListener listener = new WebSocketListener() {
+            @Override
+            public void onOpen(WebSocket webSocket, Response response) {
+                super.onOpen(webSocket, response);
+                webSocket.send(url);
+                Log.i("WebSocket Received " ,"opened!");
+            }
+
+            @Override
+            public void onMessage(WebSocket webSocket, String text) {
+                super.onMessage(webSocket, text);
+                Log.i("WebSocket Received " ,text);
+            }
+
+            @Override
+            public void onMessage(WebSocket webSocket, ByteString bytes) {
+                super.onMessage(webSocket, bytes);
+            }
+
+            @Override
+            public void onClosing(WebSocket webSocket, int code, String reason) {
+                super.onClosing(webSocket, code, reason);
+                Log.i("WebSocket closing", "");
+            }
+
+            @Override
+            public void onClosed(WebSocket webSocket, int code, String reason) {
+                super.onClosed(webSocket, code, reason);
+                Log.i("WebSocket closed", "");
+            }
+
+            @Override
+            public void onFailure(WebSocket webSocket, Throwable t, @Nullable Response response) {
+                super.onFailure(webSocket, t, response);
+                Log.i("WebSocket failed", "");
+            }
+        };
+        WebSocket ws = client.newWebSocket(request, listener);
     }
 
     public String getFormattedTraffic(long dataLong) {
@@ -257,17 +191,12 @@ public class WebSocketService extends Service {
                 } else {
                     String value = sharedPref.loadData("count");
                     count = new Long(value).longValue();
-                    Log.i("count: " + count);
                 }
-                Log.i("runnable running");
                 long currentValue = TrafficStats.getMobileTxBytes() + TrafficStats.getMobileRxBytes();
                 networkTraffic = currentValue - firstValue;
-                Log.i("network Traffic: " + networkTraffic);
                 count += networkTraffic;
                 firstValue = currentValue;
                 sharedPref.saveData("count", String.valueOf(count));
-                Log.i("time " + Calendar.getInstance().getTime());
-                Log.i("initial value" + sharedPref.loadData("count"));
             }
         }, 0, 1000);
     }
@@ -284,7 +213,6 @@ public class WebSocketService extends Service {
                 values.put("date", Calendar.getInstance().getTime().toString());
                 values.put("data", sharedPref.loadData("count"));
                 long id = dbManager.insert(values);
-                Log.i("DB returned: " + id);
             }
         }, 0, 60000);
     }

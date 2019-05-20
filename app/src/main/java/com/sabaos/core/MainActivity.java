@@ -4,12 +4,10 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.app.ActivityCompat;
 
 import android.Manifest;
-import android.app.NotificationManager;
 import android.app.job.JobInfo;
 import android.app.job.JobScheduler;
 import android.content.ComponentName;
 import android.content.Context;
-import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.net.Uri;
@@ -19,38 +17,19 @@ import android.util.Log;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.View;
-import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
 import com.sabaos.core.Utils.DeviceInfo;
 import com.sabaos.core.service.MDMService;
-import com.sabaos.core.service.WebSocketService;
-import com.sabaos.messaging.client.ApiClient;
-import com.sabaos.messaging.client.api.ClientApi;
-import com.sabaos.messaging.client.api.UserApi;
-import com.sabaos.messaging.client.model.Client;
-import com.sabaos.messaging.client.model.User;
-import com.sabaos.messaging.client.model.VersionInfo;
-import com.sabaos.messaging.messaging.NotificationSupport;
-import com.sabaos.messaging.messaging.SSLSettings;
-import com.sabaos.messaging.messaging.Settings;
-import com.sabaos.messaging.messaging.api.ApiException;
-import com.sabaos.messaging.messaging.api.Callback;
-import com.sabaos.messaging.messaging.api.ClientFactory;
-import com.sabaos.messaging.messaging.log.UncaughtExceptionHandler;
 
 import java.util.regex.Pattern;
 
-import static com.sabaos.messaging.messaging.api.Callback.callInUI;
 
 
 public class MainActivity extends AppCompatActivity {
 
-    private Settings settings;
-    private final int FILE_SELECT_CODE = 1;
-    private boolean disableSSLValidation;
-    private String caCertContents;
+//    private Settings settings;
     int jobId = 1;
     TextView appVersionV;
     TextView osVersionV;
@@ -63,19 +42,6 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
-            NotificationSupport.createChannels(
-                    (NotificationManager) this.getSystemService(Context.NOTIFICATION_SERVICE));
-        }
-
-        UncaughtExceptionHandler.registerCurrentThread();
-        com.sabaos.messaging.messaging.log.Log.i("Entering " + getClass().getSimpleName());
-        Thread thread = new Thread() {
-            public void run() {
-                initializeService();
-            }
-        };
-        thread.start();
         checkPermission();
 
     }
@@ -153,143 +119,6 @@ public class MainActivity extends AppCompatActivity {
         MenuInflater inflater = getMenuInflater();
         inflater.inflate(R.menu.menu, menu);
         return true;
-    }
-
-    private void initializeService() {
-
-        settings = new Settings(this);
-        if (settings.tokenExists()) {
-            tryAuthenticate();
-        } else {
-            showLogin();
-        }
-    }
-
-    private void showLogin() {
-        doCheckUrl();
-        onValidUrl("https://push.sabaos.com");
-        doLogin();
-
-    }
-
-    private void tryAuthenticate() {
-        ClientFactory.userApiWithToken(settings)
-                .currentUser()
-                .enqueue(callInUI(this, this::authenticated, this::failed));
-    }
-
-    private void failed(ApiException exception) {
-        if (exception.code() == 0) {
-            return;
-        }
-
-        if (exception.code() == 401) {
-            return;
-        }
-
-        String response = exception.body();
-        response = response.substring(0, Math.min(200, response.length()));
-    }
-
-    private void authenticated(User user) {
-        com.sabaos.messaging.messaging.log.Log.i("Authenticated as " + user.getName());
-
-        settings.user(user.getName(), user.isAdmin());
-        requestVersion(
-                () -> {
-
-                });
-
-        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
-            startForegroundService(new Intent(this, WebSocketService.class));
-        } else {
-            startService(new Intent(this, WebSocketService.class));
-        }
-    }
-
-    private void requestVersion(Runnable runnable) {
-        requestVersion(
-                (version) -> {
-                    com.sabaos.messaging.messaging.log.Log.i("Server version: " + version.getVersion() + "@" + version.getBuildDate());
-                    settings.serverVersion(version.getVersion());
-                    runnable.run();
-                },
-                (e) -> {
-                    runnable.run();
-                });
-    }
-
-    private void requestVersion(
-            final Callback.SuccessCallback<VersionInfo> callback,
-            final Callback.ErrorCallback errorCallback) {
-        ClientFactory.versionApi(settings.url(), settings.sslSettings())
-                .getVersion()
-                .enqueue(callInUI(this, callback, errorCallback));
-    }
-
-    public void doCheckUrl() {
-        String url = "https://push.sabaos.com";
-
-        final String fixedUrl = url.endsWith("/") ? url.substring(0, url.length() - 1) : url;
-
-        ClientFactory.versionApi(fixedUrl, tempSSLSettings())
-                .getVersion();
-    }
-
-    public void onValidUrl(String url) {
-        settings.url(url);
-    }
-
-    private Callback.ErrorCallback onInvalidUrl(String url) {
-        return (exception) -> {
-        };
-    }
-
-    public void doLogin() {
-        String username = "admin";
-        String password = "admin";
-
-        ApiClient client =
-                ClientFactory.basicAuth(settings.url(), tempSSLSettings(), username, password);
-        client.createService(UserApi.class)
-                .currentUser()
-                .enqueue(callInUI(this, (user) -> newClientDialog(client), this::onInvalidLogin));
-    }
-
-    private void onInvalidLogin(ApiException e) {
-    }
-
-    private void newClientDialog(ApiClient client) {
-        EditText clientName = new EditText(this);
-        clientName.setText(Build.MODEL);
-        doCreateClient(client, clientName);
-    }
-
-    public void doCreateClient(ApiClient client, EditText nameProvider) {
-
-        Client newClient = new Client().name(nameProvider.getText().toString());
-        client.createService(ClientApi.class)
-                .createClient(newClient)
-                .enqueue(callInUI(this, this::onCreatedClient, this::onFailedToCreateClient));
-
-    }
-
-
-    private void onCreatedClient(Client client) {
-        settings.token(client.getToken());
-        settings.validateSSL(!disableSSLValidation);
-        settings.cert(caCertContents);
-        initializeService();
-    }
-
-    private void onFailedToCreateClient(ApiException e) {
-    }
-
-    private void onCancelClientDialog(DialogInterface dialog, int which) {
-    }
-
-    private SSLSettings tempSSLSettings() {
-        return new SSLSettings(!disableSSLValidation, caCertContents);
     }
 
     public void callSupport(View view) {
