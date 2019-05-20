@@ -119,40 +119,39 @@ public class DeviceInfo {
                 + " " + Build.MODEL;
     }
 
-    public String getOsSecurityLevel(Context context){
+    public String getOsSecurityLevel(Context context) {
 
         SabaUtils SecurityUtils = new SabaUtils();
         return SecurityUtils.getSecurityLevel(context);
     }
 
-    public String showUsedMemory(Context context){
+    public String showUsedMemory(Context context) {
 
         ActivityManager activityManager = (ActivityManager) context.getSystemService(ACTIVITY_SERVICE);
         ActivityManager.MemoryInfo memoryInfo = new ActivityManager.MemoryInfo();
         activityManager.getMemoryInfo(memoryInfo);
-        double allMemory = ((new Long(memoryInfo.totalMem)).doubleValue())/(1000*1000*1000);
-        double usedMemory = ((new Long(memoryInfo.totalMem-memoryInfo.availMem)).doubleValue())/(1000*1000*1000);
+        double allMemory = ((new Long(memoryInfo.totalMem)).doubleValue()) / (1000 * 1000 * 1000);
+        double usedMemory = ((new Long(memoryInfo.totalMem - memoryInfo.availMem)).doubleValue()) / (1000 * 1000 * 1000);
         BigDecimal bd1 = new BigDecimal(allMemory);
         BigDecimal bd2 = new BigDecimal(usedMemory);
 
         BigDecimal allMemoryRounded = bd1.round(new MathContext(1, RoundingMode.HALF_UP));
-        BigDecimal usedMemoryRounded = bd2.round(new MathContext(2,RoundingMode.HALF_UP));
+        BigDecimal usedMemoryRounded = bd2.round(new MathContext(2, RoundingMode.HALF_UP));
 
         String memoryStatus = String.valueOf(usedMemoryRounded) + "GB" + " / " + String.valueOf(allMemoryRounded) + "GB";
 
         return memoryStatus;
     }
 
-    public int showProgressValue(Context context){
+    public int showProgressValue(Context context) {
 
         ActivityManager activityManager = (ActivityManager) context.getSystemService(ACTIVITY_SERVICE);
         ActivityManager.MemoryInfo memoryInfo = new ActivityManager.MemoryInfo();
         activityManager.getMemoryInfo(memoryInfo);
-        double allMemory = ((new Long(memoryInfo.totalMem)).doubleValue())/(1000*1000*1000);
-        double usedMemory = ((new Long(memoryInfo.totalMem-memoryInfo.availMem)).doubleValue())/(1000*1000*1000);
+        double allMemory = ((new Long(memoryInfo.totalMem)).doubleValue()) / (1000 * 1000 * 1000);
+        double usedMemory = ((new Long(memoryInfo.totalMem - memoryInfo.availMem)).doubleValue()) / (1000 * 1000 * 1000);
         double progressValueDouble = (usedMemory / allMemory) * 100;
         int progress = new Double(progressValueDouble).intValue();
-
 
 
         return progress;

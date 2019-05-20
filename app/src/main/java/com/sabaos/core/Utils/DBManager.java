@@ -17,7 +17,7 @@ public class DBManager {
     private SQLiteDatabase sqLiteDatabase;
 
 
-    public DBManager(Context context){
+    public DBManager(Context context) {
 
         DBCreate dbCreate = new DBCreate(context, dbName, null, dbVersion);
         sqLiteDatabase = dbCreate.getWritableDatabase();
@@ -46,7 +46,7 @@ public class DBManager {
         }
     }
 
-    public long insert(ContentValues values){
+    public long insert(ContentValues values) {
 
         long id = sqLiteDatabase.insert(tableName, "", values);
         return id;

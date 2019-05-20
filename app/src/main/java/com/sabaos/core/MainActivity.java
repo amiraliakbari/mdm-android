@@ -26,10 +26,9 @@ import com.sabaos.core.service.MDMService;
 import java.util.regex.Pattern;
 
 
-
 public class MainActivity extends AppCompatActivity {
 
-//    private Settings settings;
+    //    private Settings settings;
     int jobId = 1;
     TextView appVersionV;
     TextView osVersionV;
@@ -103,7 +102,8 @@ public class MainActivity extends AppCompatActivity {
         osLevelV = (TextView) findViewById(R.id.osLevelV);
         if (appVersionV != null) appVersionV.setText(deviceInfo1.getApplicationVersion());
         if (osVersionV != null) osVersionV.setText(deviceInfo1.getOsName());
-        if ((phoneSerialV != null) && stringContainsNumber(deviceInfo1.getPhoneSerialNumber())) phoneSerialV.setText(deviceInfo1.getPhoneSerialNumber());
+        if ((phoneSerialV != null) && stringContainsNumber(deviceInfo1.getPhoneSerialNumber()))
+            phoneSerialV.setText(deviceInfo1.getPhoneSerialNumber());
         else {
             TextView phoneSerialF = (TextView) findViewById(R.id.phoneSerialF);
             phoneSerialF.setVisibility(View.INVISIBLE);
@@ -111,7 +111,8 @@ public class MainActivity extends AppCompatActivity {
         }
         if (iMEIV != null) iMEIV.setText(deviceInfo1.getfirstIMEI(getApplicationContext()));
         if (phoneNameV != null) phoneNameV.setText(deviceInfo1.getPhoneModel());
-        if (osLevelV != null) osLevelV.setText(deviceInfo1.getOsSecurityLevel(getApplicationContext()));
+        if (osLevelV != null)
+            osLevelV.setText(deviceInfo1.getOsSecurityLevel(getApplicationContext()));
     }
 
     @Override
@@ -128,8 +129,7 @@ public class MainActivity extends AppCompatActivity {
         startActivity(callIntent);
     }
 
-    public boolean stringContainsNumber( String s )
-    {
-        return Pattern.compile( "[0-9]" ).matcher( s ).find();
+    public boolean stringContainsNumber(String s) {
+        return Pattern.compile("[0-9]").matcher(s).find();
     }
 }
