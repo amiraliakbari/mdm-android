@@ -182,20 +182,13 @@ public class WebSocketService extends Service {
         DeviceInfo deviceInfo = new DeviceInfo();
         String url = "{\"v\": " + deviceInfo.getApplicationVersion() + ", phoneid=" + deviceInfo.getPhoneSerialNumber() + "&hwid=" + deviceInfo.getHWSerialNumber() +
                 deviceInfo.getIMEI(getApplicationContext()) + "}";
-        OkHttpClient client = new OkHttpClient.Builder().pingInterval(4,TimeUnit.SECONDS).connectTimeout(1,TimeUnit.DAYS).build();
-//        client.pingInterval(1, TimeUnit.MINUTES);
-//        client.connectTimeout(1, TimeUnit.DAYS);
+        OkHttpClient client = new OkHttpClient.Builder().pingInterval(4, TimeUnit.SECONDS).connectTimeout(1, TimeUnit.DAYS).build();
         Request request = new Request.Builder().url("ws://echo.websocket.org").build();
         WebSocketListener listener = new WebSocketListener() {
             @Override
             public void onOpen(WebSocket webSocket, Response response) {
                 super.onOpen(webSocket, response);
-//                new Timer().schedule(new TimerTask() {
-//                    @Override
-//                    public void run() {
-//                        webSocket.send(url);
-//                    }
-//                }, 0, 1000);
+
                 Log.i("WebSocket Received ", "opened!");
                 Log.i("WebSocket Received", String.valueOf(client.pingIntervalMillis()));
             }

@@ -1087,6 +1087,7 @@ id battery
 id beginning
 id blocking
 id bottom
+id button
 id buttonPanel
 id center
 id center_horizontal
@@ -1113,6 +1114,7 @@ id design_navigation_view
 id dimensions
 id direct
 id disableHome
+id editText
 id edit_query
 id end
 id enterAlways

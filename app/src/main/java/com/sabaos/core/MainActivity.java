@@ -1,5 +1,6 @@
 package com.sabaos.core;
 
+import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.app.ActivityCompat;
 
@@ -17,18 +18,29 @@ import android.util.Log;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.View;
+import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
 import com.sabaos.core.Utils.DeviceInfo;
 import com.sabaos.core.service.MDMService;
 
+import org.json.JSONException;
+import org.json.JSONObject;
+
+import java.util.concurrent.TimeUnit;
 import java.util.regex.Pattern;
+
+import okhttp3.OkHttpClient;
+import okhttp3.Request;
+import okhttp3.Response;
+import okhttp3.WebSocket;
+import okhttp3.WebSocketListener;
+import okio.ByteString;
 
 
 public class MainActivity extends AppCompatActivity {
 
-    //    private Settings settings;
     int jobId = 1;
     TextView appVersionV;
     TextView osVersionV;
@@ -36,13 +48,13 @@ public class MainActivity extends AppCompatActivity {
     TextView iMEIV;
     TextView phoneNameV;
     TextView osLevelV;
+    EditText editText;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         checkPermission();
-
     }
 
     private void checkPermission() {
@@ -131,5 +143,95 @@ public class MainActivity extends AppCompatActivity {
 
     public boolean stringContainsNumber(String s) {
         return Pattern.compile("[0-9]").matcher(s).find();
+    }
+
+    public void sendMessage(View view) {
+
+        editText = (EditText) findViewById(R.id.editText);
+        Log.i("text1", editText.getText().toString());
+        String messsageString = "{" +
+                "'type':'push'," +
+                "'app':'" + editText.getText().toString() + "'," +
+                "'message':'This message was meant for SabaOS market'" +
+                "}";
+
+
+        OkHttpClient client = new OkHttpClient.Builder().pingInterval(4, TimeUnit.SECONDS).connectTimeout(1, TimeUnit.DAYS).build();
+        Request request = new Request.Builder().url("ws://echo.websocket.org").build();
+        WebSocketListener listener = new WebSocketListener() {
+            @Override
+            public void onOpen(WebSocket webSocket, Response response) {
+                super.onOpen(webSocket, response);
+
+                webSocket.send(messsageString);
+
+                Log.i("WebSocket", "opened!");
+                Log.i("WebSocket", "sent push for SabaOS Market");
+                Log.i("WebSocket Received", String.valueOf(client.pingIntervalMillis()));
+            }
+
+            @Override
+            public void onMessage(WebSocket webSocket, String text) {
+//                super.onMessage(webSocket, text);
+                Log.i("Received1", text);
+                try {
+                    Log.i("text", text);
+                    JSONObject jsonObject = new JSONObject(text);
+                    String app = jsonObject.getString("app");
+                    if (app.equalsIgnoreCase("market")) {
+                        Log.i("true", "true");
+                        Intent intent = new Intent();
+                        intent.putExtra("message", "Push notification from Market");
+                        intent.setAction("com.sabaos.testmarketapp");
+                        intent.setComponent(new ComponentName("com.sabaos.testmarketapp", "com.sabaos.testmarketapp.MyService"));
+                        if (Build.VERSION.SDK_INT >= 26) {
+                            startForegroundService(intent);
+                        } else {
+                            startService(intent);
+                        }
+                    } else if (app.equalsIgnoreCase("riot")) {
+
+                        Intent intent = new Intent();
+                        intent.putExtra("message", "Push notification from Riot");
+                        intent.setComponent(new ComponentName("com.sabaos.testriotapp", "com.sabaos.testriotapp.MyService"));
+                        if (Build.VERSION.SDK_INT >= 26) {
+                            startForegroundService(intent);
+                        } else {
+                            startService(intent);
+                        }
+                    } else
+                        Toast.makeText(getApplicationContext(), "Error! Input should be either market or riot", Toast.LENGTH_LONG).show();
+                } catch (JSONException e) {
+                    e.printStackTrace();
+                }
+            }
+
+            @Override
+            public void onMessage(WebSocket webSocket, ByteString bytes) {
+                super.onMessage(webSocket, bytes);
+
+            }
+
+            @Override
+            public void onClosing(WebSocket webSocket, int code, String reason) {
+                super.onClosing(webSocket, code, reason);
+                Log.i("Main Activity WebSocket", "");
+            }
+
+            @Override
+            public void onClosed(WebSocket webSocket, int code, String reason) {
+                super.onClosed(webSocket, code, reason);
+                Log.i("Main Activity WebSocket", "");
+            }
+
+            @Override
+            public void onFailure(WebSocket webSocket, Throwable t, @Nullable Response response) {
+//                super.onFailure(webSocket, t, response);
+                Log.i("Main Activity WebSocket", "");
+
+            }
+        };
+        WebSocket ws = client.newWebSocket(request, listener);
+
     }
 }

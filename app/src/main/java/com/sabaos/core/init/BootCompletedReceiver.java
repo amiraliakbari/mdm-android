@@ -16,11 +16,7 @@ public class BootCompletedReceiver extends BroadcastReceiver {
 
     @Override
     public void onReceive(Context context, Intent intent) {
-//        Settings settings = new Settings(context);
         int jobId = 1;
-//        if (!settings.tokenExists()) {
-//            return;
-//        }
 
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
             Thread thread = new Thread() {
