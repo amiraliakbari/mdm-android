@@ -20,7 +20,7 @@ public class DeviceInfo {
     private static final String applicationVersion = "3.0";
     private Context context;
 
-    public DeviceInfo(Context context){
+    public DeviceInfo(Context context) {
 
         this.context = context;
     }

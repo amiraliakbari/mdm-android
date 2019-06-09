@@ -1,0 +1,11 @@
+#Internal package file, do not edit.
+#Sun Jun 09 11:58:50 IRDT 2019
+1.base=/home/kianian/Desktop/projects/1-MDM Projects/Saba/mdm-android/app/build/intermediates/transforms/dexMerger/debug/1
+0.baseType=DIRECTORY
+1.baseType=DIRECTORY
+count=2
+1.set=DEX
+0.path=classes.dex
+0.set=DEX
+0.base=/home/kianian/Desktop/projects/1-MDM Projects/Saba/mdm-android/app/build/intermediates/transforms/dexMerger/debug/0
+1.path=classes.dex

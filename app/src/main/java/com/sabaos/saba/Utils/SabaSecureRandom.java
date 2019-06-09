@@ -5,7 +5,7 @@ import java.util.Random;
 
 public class SabaSecureRandom {
 
-    public String generateSecureRandom(){
+    public String generateSecureRandom() {
 
         final String symbols = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
 
@@ -17,7 +17,7 @@ public class SabaSecureRandom {
 
         for (int i = 0; i < buf.length; ++i)
             buf[i] = symbols.charAt(random.nextInt(symbols.length()));
-        String result =  new String(buf);
+        String result = new String(buf);
         return result;
     }
 }

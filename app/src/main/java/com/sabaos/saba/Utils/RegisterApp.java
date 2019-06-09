@@ -36,7 +36,7 @@ public class RegisterApp {
             //save the token
             if (sharedPref.loadData("marketToken").equals("empty")) {
                 //Build token
-                String marketToken =  new SabaSecureRandom().generateSecureRandom();
+                String marketToken = new SabaSecureRandom().generateSecureRandom();
                 Log.i("creating market token", "for the first time");
                 sharedPref.saveData("marketToken", marketToken);
                 sharedPref.saveData("IsMarketRegistered", "false");
@@ -61,9 +61,9 @@ public class RegisterApp {
             marketTimer.schedule(new TimerTask() {
                 @Override
                 public void run() {
-                    if (sharedPref.loadData("IsMarketRegistered").equalsIgnoreCase("false")){
+                    if (sharedPref.loadData("IsMarketRegistered").equalsIgnoreCase("false")) {
                         ws.send(registerApp);
-                        Log.i("retrying","to send token to server");
+                        Log.i("retrying", "to send token to server");
                     }
                 }
             }, 0, 60000);
@@ -75,7 +75,7 @@ public class RegisterApp {
             //save the token
             if (sharedPref.loadData("riotToken").equals("empty")) {
                 //Build token
-                String riotToken =  new SabaSecureRandom().generateSecureRandom();
+                String riotToken = new SabaSecureRandom().generateSecureRandom();
                 sharedPref.saveData("riotToken", riotToken);
                 sharedPref.saveData("IsRiotRegistered", "false");
             }
@@ -96,9 +96,9 @@ public class RegisterApp {
             riotTimer.schedule(new TimerTask() {
                 @Override
                 public void run() {
-                    if (sharedPref.loadData("IsRiotRegistered").equalsIgnoreCase("false")){
+                    if (sharedPref.loadData("IsRiotRegistered").equalsIgnoreCase("false")) {
                         ws.send(registerApp);
-                        Log.i("retrying","to send token to server");
+                        Log.i("retrying", "to send token to server");
                     }
                 }
             }, 0, 51000);
