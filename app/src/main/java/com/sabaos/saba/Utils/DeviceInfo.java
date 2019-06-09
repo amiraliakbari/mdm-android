@@ -18,13 +18,19 @@ import static android.content.Context.ACTIVITY_SERVICE;
 public class DeviceInfo {
 
     private static final String applicationVersion = "3.0";
+    private Context context;
+
+    public DeviceInfo(Context context){
+
+        this.context = context;
+    }
 
     public String getApplicationVersion() {
 
         return applicationVersion;
     }
 
-    public String getIMEI(Context context) {
+    public String getIMEI() {
 
         ArrayList<String> IMEI = new ArrayList<String>();
         TelephonyManager tm = (TelephonyManager) context.getSystemService(Context.TELEPHONY_SERVICE);
@@ -59,7 +65,7 @@ public class DeviceInfo {
         return phoneIMEI;
     }
 
-    public String getfirstIMEI(Context context) {
+    public String getfirstIMEI() {
 
         String phoneIMEI = "";
 //        ArrayList<String> IMEI = new ArrayList<String>();
@@ -119,13 +125,13 @@ public class DeviceInfo {
                 + " " + Build.MODEL;
     }
 
-    public String getOsSecurityLevel(Context context) {
+    public String getOsSecurityLevel() {
 
         SabaUtils SecurityUtils = new SabaUtils();
         return SecurityUtils.getSecurityLevel(context);
     }
 
-    public String showUsedMemory(Context context) {
+    public String showUsedMemory() {
 
         ActivityManager activityManager = (ActivityManager) context.getSystemService(ACTIVITY_SERVICE);
         ActivityManager.MemoryInfo memoryInfo = new ActivityManager.MemoryInfo();
@@ -143,7 +149,7 @@ public class DeviceInfo {
         return memoryStatus;
     }
 
-    public int showProgressValue(Context context) {
+    public int showProgressValue() {
 
         ActivityManager activityManager = (ActivityManager) context.getSystemService(ACTIVITY_SERVICE);
         ActivityManager.MemoryInfo memoryInfo = new ActivityManager.MemoryInfo();

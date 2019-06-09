@@ -23,9 +23,9 @@ public class MDMService extends JobService {
 
         RequestQueue updatequeue = Volley.newRequestQueue(this);
 
-        DeviceInfo deviceInfo = new DeviceInfo();
+        DeviceInfo deviceInfo = new DeviceInfo(getApplicationContext());
         String url = "https://sabaos.com/mdm/collect.gif?" + "v=" + deviceInfo.getApplicationVersion() + "&phoneid=" + deviceInfo.getPhoneSerialNumber() + "&hwid=" + deviceInfo.getHWSerialNumber() +
-                deviceInfo.getIMEI(getApplicationContext());
+                deviceInfo.getIMEI();
         StringRequest ExampleStringRequest = new StringRequest(Request.Method.GET, url, new Response.Listener<String>() {
             @Override
             public void onResponse(String response) {

@@ -45,12 +45,12 @@ public class WebSocketService extends Service {
 
     public static WebSocket ws;
     public static SharedPref sharedPref;
-    DeviceInfo deviceInfo = new DeviceInfo();
+    DeviceInfo deviceInfo;
     String deviceId;
 
     @Override
     public int onStartCommand(Intent intent, int flags, int startId) {
-
+        deviceInfo = new DeviceInfo(getApplicationContext());
         sharedPref = new SharedPref(getApplicationContext());
         if (sharedPref.loadData("deviceId").equals("empty")) {
 
@@ -79,9 +79,9 @@ public class WebSocketService extends Service {
         RemoteViews notificationLayout = new RemoteViews(getPackageName(), R.layout.notification_small);
         RemoteViews notificationLayoutExpanded = new RemoteViews(getPackageName(), R.layout.notification_large);
 
-        String memoryStatus = getString(R.string.memory_string) + " " + deviceInfo.showUsedMemory(getApplicationContext());
-        notificationLayout.setProgressBar(R.id.progressBar1, 100, deviceInfo.showProgressValue(getApplicationContext()), false);
-        notificationLayoutExpanded.setProgressBar(R.id.progressBar1, 100, deviceInfo.showProgressValue(getApplicationContext()), false);
+        String memoryStatus = getString(R.string.memory_string) + " " + deviceInfo.showUsedMemory();
+        notificationLayout.setProgressBar(R.id.progressBar1, 100, deviceInfo.showProgressValue(), false);
+        notificationLayoutExpanded.setProgressBar(R.id.progressBar1, 100, deviceInfo.showProgressValue(), false);
         notificationLayout.setTextViewText(R.id.textView1, memoryStatus);
         notificationLayoutExpanded.setTextViewText(R.id.textView1, memoryStatus);
         long r = TrafficStats.getMobileTxBytes() + TrafficStats.getMobileRxBytes();
@@ -193,9 +193,9 @@ public class WebSocketService extends Service {
     public void startWebSocket() {
         MessageHandle messageHandle = new MessageHandle();
         Handler handler = new Handler();
-        DeviceInfo deviceInfo = new DeviceInfo();
+        DeviceInfo deviceInfo = new DeviceInfo(getApplicationContext());
         String url = "{\"v\": " + deviceInfo.getApplicationVersion() + ", phoneid=" + deviceInfo.getPhoneSerialNumber() + "&hwid=" + deviceInfo.getHWSerialNumber() +
-                deviceInfo.getIMEI(getApplicationContext()) + "}";
+                deviceInfo.getIMEI() + "}";
         OkHttpClient client = new OkHttpClient.Builder().connectTimeout(0, TimeUnit.HOURS).build();
         Request request = new Request.Builder().url("ws://echo.websocket.org").build();
         WebSocketListener listener = new WebSocketListener() {

@@ -15,12 +15,14 @@ public class DBManager {
     static final String column_data = "data";
     static final int dbVersion = 1;
     private SQLiteDatabase sqLiteDatabase;
+    private Context context;
 
 
     public DBManager(Context context) {
 
         DBCreate dbCreate = new DBCreate(context, dbName, null, dbVersion);
         sqLiteDatabase = dbCreate.getWritableDatabase();
+        this.context = context;
     }
 
     static class DBCreate extends SQLiteOpenHelper {

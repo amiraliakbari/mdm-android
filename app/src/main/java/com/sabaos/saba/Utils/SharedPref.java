@@ -6,10 +6,12 @@ import android.content.SharedPreferences;
 public class SharedPref {
 
     SharedPreferences sharedPreferences;
+    private Context context;
 
     public SharedPref(Context context) {
 
         sharedPreferences = context.getSharedPreferences("NetworkUsageData", Context.MODE_PRIVATE);
+        this.context = context;
     }
 
     public void saveData(String key, String value) {

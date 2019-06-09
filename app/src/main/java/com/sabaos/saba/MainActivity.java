@@ -93,7 +93,7 @@ public class MainActivity extends AppCompatActivity {
 
     public void viewParameters() {
 
-        DeviceInfo deviceInfo1 = new DeviceInfo();
+        DeviceInfo deviceInfo1 = new DeviceInfo(getApplicationContext());
         appVersionV = (TextView) findViewById(R.id.appVerV);
         osVersionV = (TextView) findViewById(R.id.osV);
         phoneSerialV = (TextView) findViewById(R.id.phoneSerialV);
@@ -109,10 +109,10 @@ public class MainActivity extends AppCompatActivity {
             phoneSerialF.setVisibility(View.INVISIBLE);
             phoneSerialV.setVisibility(View.INVISIBLE);
         }
-        if (iMEIV != null) iMEIV.setText(deviceInfo1.getfirstIMEI(getApplicationContext()));
+        if (iMEIV != null) iMEIV.setText(deviceInfo1.getfirstIMEI());
         if (phoneNameV != null) phoneNameV.setText(deviceInfo1.getPhoneModel());
         if (osLevelV != null)
-            osLevelV.setText(deviceInfo1.getOsSecurityLevel(getApplicationContext()));
+            osLevelV.setText(deviceInfo1.getOsSecurityLevel());
     }
 
     @Override
