@@ -32,8 +32,9 @@ public class MessageHandle {
                     } else Log.i("client registration", "failure");
 
                     break;
+
                 case "registerApp":
-                    if (jsonObject.getString("app").equalsIgnoreCase("com.sabaos.testmarketapp")){
+                    if (jsonObject.getString("app").equalsIgnoreCase("com.sabaos.testmarketapp")) {
 
                         if (jsonObject.getString("result").equalsIgnoreCase("success")) {
 
@@ -41,10 +42,11 @@ public class MessageHandle {
                             sharedPref.saveData("IsMarketRegistered", "true");
                             marketTimer.cancel();
                             marketTimer.purge();
-                        } Log.i("app registration", "failure");
+                        }
+                        Log.i("app registration", "failure");
 
 
-                    }else if (jsonObject.getString("app").equalsIgnoreCase("com.sabaos.testriotapp")){
+                    } else if (jsonObject.getString("app").equalsIgnoreCase("com.sabaos.testriotapp")) {
 
                         if (jsonObject.getString("result").equalsIgnoreCase("success")) {
 
@@ -52,10 +54,12 @@ public class MessageHandle {
                             sharedPref.saveData("IsRiotRegistered", "true");
                             riotTimer.cancel();
                             riotTimer.purge();
-                        } Log.i("app registration", "failure");
+                        }
+                        Log.i("app registration", "failure");
 
                     }
                     break;
+
                 case "push":
 
                     String app = jsonObject.getString("app");
@@ -74,7 +78,7 @@ public class MessageHandle {
                         String ack = "{" +
                                 "\"type\":\"push\"," +
                                 "\"token\":\"" + new SharedPref(context).loadData("marketToken") +
-                                "\",\"data\":\""+ "first test push message" +"\"" +
+                                "\",\"data\":\"" + jsonObject.getString("data") + "\"" +
                                 "\"result\":\"success\"" +
                                 "}";
                         ws.send(ack);
@@ -95,7 +99,7 @@ public class MessageHandle {
                         String ack = "{" +
                                 "\"type\":\"push\"," +
                                 "\"token\":\"" + new SharedPref(context).loadData("riotToken") +
-                                "\",\"data\":\""+ "first test push message" +"\"" +
+                                "\",\"data\":\"" + jsonObject.getString("data") + "\"" +
                                 "\"result\":\"success\"" +
                                 "}";
                         ws.send(ack);

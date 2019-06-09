@@ -70,19 +70,6 @@ public class MyIntentService extends IntentService {
     protected void onHandleIntent(Intent intent) {
 
 
-        Log.i("Service1 ", "Started!");
-        Log.i("Service1 ", "intent received");
-        //checks type of message and executes corresponding action
-        Bundle bundle = intent.getExtras();
-        String type = bundle.getString("type");
-        if (type.equalsIgnoreCase("registerApp")) {
-
-            String app = bundle.getString("app");
-            RegisterApp registerApp = new RegisterApp(getApplicationContext(), app);
-            registerApp.registerApp1();
-        }
-
-
         // This is necessary for service to run, otherwise Android will destroy it after 5 secs.
         NotificationManager notificationManager;
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
@@ -114,6 +101,18 @@ public class MyIntentService extends IntentService {
             startForeground(1, builder.build());
         }
 
+
+        Log.i("Service1 ", "Started!");
+        Log.i("Service1 ", "intent received");
+        //checks type of message and executes corresponding action
+        Bundle bundle = intent.getExtras();
+        String type = bundle.getString("type");
+        if (type.equalsIgnoreCase("registerApp")) {
+
+            String app = bundle.getString("app");
+            RegisterApp registerApp = new RegisterApp(getApplicationContext(), app);
+            registerApp.registerApp1();
+        }
 
     }
 

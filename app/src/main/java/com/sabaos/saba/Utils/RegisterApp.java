@@ -81,7 +81,7 @@ public class RegisterApp {
             }
             //send Token back to app
             Intent intent = new Intent();
-            intent.putExtra("type", "registerResponse");
+            intent.putExtra("type", "registerApp");
             intent.putExtra("riotToken", "riotToken");
             intent.putExtra("packageName", packageName);
             intent.setComponent(new ComponentName("com.sabaos.testriotapp", "com.sabaos.testriotapp.MyIntentService"));
@@ -96,7 +96,7 @@ public class RegisterApp {
             riotTimer.schedule(new TimerTask() {
                 @Override
                 public void run() {
-                    if (sharedPref.loadData("IsMarketRegistered").equalsIgnoreCase("false")){
+                    if (sharedPref.loadData("IsRiotRegistered").equalsIgnoreCase("false")){
                         ws.send(registerApp);
                         Log.i("retrying","to send token to server");
                     }
