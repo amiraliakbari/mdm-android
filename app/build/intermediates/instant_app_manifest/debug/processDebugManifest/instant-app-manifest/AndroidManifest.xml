@@ -30,8 +30,13 @@
         android:supportsRtl="true"
         android:testOnly="true"
         android:theme="@style/AppTheme" >
+        <service
+            android:name="com.sabaos.saba.service.MyIntentService"
+            android:enabled="true"
+            android:exported="true" />
+
         <activity
-            android:name="com.sabaos.core.MainActivity"
+            android:name="com.sabaos.saba.MainActivity"
             android:label="@string/app_name"
             android:theme="@style/AppTheme.NoActionBar"
             android:windowSoftInputMode="adjustResize" >
@@ -42,12 +47,12 @@
             </intent-filter>
         </activity>
 
-        <service android:name="com.sabaos.core.service.WebSocketService" />
+        <service android:name="com.sabaos.saba.service.WebSocketService" />
         <service
-            android:name="com.sabaos.core.service.MDMService"
+            android:name="com.sabaos.saba.service.MDMService"
             android:permission="android.permission.BIND_JOB_SERVICE" />
 
-        <receiver android:name="com.sabaos.core.init.BootCompletedReceiver" >
+        <receiver android:name="com.sabaos.saba.init.BootCompletedReceiver" >
             <intent-filter>
                 <action android:name="android.intent.action.BOOT_COMPLETED" />
             </intent-filter>

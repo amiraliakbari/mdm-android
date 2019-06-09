@@ -4,7 +4,17 @@
             "outputFile": "/home/kianian/Desktop/projects/1-MDM Projects/Saba/mdm-android/app/build/intermediates/incremental/mergeDebugResources/merged.dir/values-v16/values-v16.xml",
             "map": [
                 {
-                    "source": "/home/kianian/.gradle/caches/transforms-1/files-1.1/appcompat-1.0.0-rc01.aar/b43a1807f8afe9627d3ff35dc60a296b/res/values-v16/values-v16.xml",
+                    "source": "/home/kianian/.gradle/caches/transforms-1/files-1.1/core-1.0.0.aar/578708f98ab150ba2b62350c70c4078b/res/values-v16/values-v16.xml",
+                    "from": {
+                        "startLines": "2",
+                        "startColumns": "4",
+                        "startOffsets": "55",
+                        "endColumns": "65",
+                        "endOffsets": "116"
+                    }
+                },
+                {
+                    "source": "/home/kianian/.gradle/caches/transforms-1/files-1.1/appcompat-1.0.0.aar/b2b039a58706c9abf021dcf438151385/res/values-v16/values-v16.xml",
                     "from": {
                         "startLines": "2",
                         "startColumns": "4",
@@ -20,16 +30,6 @@
                         "endLines": "6",
                         "endColumns": "12",
                         "endOffsets": "289"
-                    }
-                },
-                {
-                    "source": "/home/kianian/.gradle/caches/transforms-1/files-1.1/core-1.0.0-rc01.aar/be5fc17fb71a0027530c236c2e50dc78/res/values-v16/values-v16.xml",
-                    "from": {
-                        "startLines": "2",
-                        "startColumns": "4",
-                        "startOffsets": "55",
-                        "endColumns": "65",
-                        "endOffsets": "116"
                     }
                 }
             ]
