@@ -9,13 +9,10 @@ import android.content.Context;
 import android.content.Intent;
 import android.net.TrafficStats;
 import android.os.Build;
-import android.os.Bundle;
 import android.os.Handler;
 import android.os.IBinder;
-import android.os.Looper;
 import android.util.Log;
 import android.widget.RemoteViews;
-import android.widget.Toast;
 
 import androidx.annotation.Nullable;
 import androidx.core.app.NotificationCompat;
@@ -24,7 +21,6 @@ import com.sabaos.saba.R;
 import com.sabaos.saba.Utils.DBManager;
 import com.sabaos.saba.Utils.DeviceInfo;
 import com.sabaos.saba.Utils.MessageHandle;
-import com.sabaos.saba.Utils.RegisterApp;
 import com.sabaos.saba.Utils.SharedPref;
 
 import java.math.BigDecimal;
@@ -46,7 +42,6 @@ public class WebSocketService extends Service {
     public static WebSocket ws;
     public static SharedPref sharedPref;
     DeviceInfo deviceInfo;
-    String deviceId;
 
     @Override
     public int onStartCommand(Intent intent, int flags, int startId) {
@@ -211,12 +206,6 @@ public class WebSocketService extends Service {
             public void onMessage(WebSocket webSocket, String text) {
                 super.onMessage(webSocket, text);
                 Log.i("WebSocket Received ", text);
-//                new Handler(Looper.getMainLooper()).post(new Runnable() {
-//                    @Override
-//                    public void run() {
-//                        Toast.makeText(getApplicationContext(), text, Toast.LENGTH_LONG).show();
-//                    }
-//                });
 
                 messageHandle.handleReceivedMessages(getApplicationContext(), text);
             }
