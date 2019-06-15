@@ -21,7 +21,7 @@ import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.sabaos.saba.Utils.DeviceInfo;
+import com.sabaos.saba.utils.DeviceInfo;
 import com.sabaos.saba.service.MDMService;
 import com.sabaos.saba.service.WebSocketService;
 
@@ -133,16 +133,4 @@ public class MainActivity extends AppCompatActivity {
         return Pattern.compile("[0-9]").matcher(s).find();
     }
 
-    public void sendMessage(View view) {
-
-        editText = (EditText) findViewById(R.id.editText);
-        Log.i("text1", editText.getText().toString());
-        String messsageString = "{" +
-                "'type':'push'," +
-                "'app':'" + editText.getText().toString() + "'," +
-                "'message':'This message was meant for SabaOS market'" +
-                "}";
-        WebSocketService.ws.send(messsageString);
-
-    }
 }

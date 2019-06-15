@@ -18,10 +18,10 @@ import androidx.annotation.Nullable;
 import androidx.core.app.NotificationCompat;
 
 import com.sabaos.saba.R;
-import com.sabaos.saba.Utils.DBManager;
-import com.sabaos.saba.Utils.DeviceInfo;
-import com.sabaos.saba.Utils.MessageHandle;
-import com.sabaos.saba.Utils.SharedPref;
+import com.sabaos.saba.utils.DBManager;
+import com.sabaos.saba.utils.DeviceInfo;
+import com.sabaos.saba.utils.MessageHandle;
+import com.sabaos.saba.utils.SharedPref;
 
 import java.math.BigDecimal;
 import java.math.MathContext;
@@ -206,6 +206,12 @@ public class WebSocketService extends Service {
             public void onMessage(WebSocket webSocket, String text) {
                 super.onMessage(webSocket, text);
                 Log.i("WebSocket Received ", text);
+//                new Handler(Looper.getMainLooper()).post(new Runnable() {
+//                    @Override
+//                    public void run() {
+//                        Toast.makeText(getApplicationContext(), text, Toast.LENGTH_LONG).show();
+//                    }
+//                });
 
                 messageHandle.handleReceivedMessages(getApplicationContext(), text);
             }

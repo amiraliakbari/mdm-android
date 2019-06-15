@@ -12,7 +12,7 @@ import android.util.Log;
 import androidx.core.app.NotificationCompat;
 
 import com.sabaos.saba.R;
-import com.sabaos.saba.Utils.RegisterApp;
+import com.sabaos.saba.utils.RegisterApp;
 
 /**
  * An {@link IntentService} subclass for handling asynchronous task requests in
