@@ -4,14 +4,13 @@ import android.app.ActivityManager;
 import android.content.Context;
 import android.os.Build;
 import android.telephony.TelephonyManager;
-
-import com.sabaos.core.SabaUtils;
-
 import java.lang.reflect.Method;
 import java.math.BigDecimal;
 import java.math.MathContext;
 import java.math.RoundingMode;
 import java.util.ArrayList;
+
+import com.sabaos.core.SabaUtils;
 
 import static android.content.Context.ACTIVITY_SERVICE;
 
@@ -68,7 +67,6 @@ public class DeviceInfo {
     public String getfirstIMEI() {
 
         String phoneIMEI = "";
-//        ArrayList<String> IMEI = new ArrayList<String>();
         TelephonyManager tm = (TelephonyManager) context.getSystemService(Context.TELEPHONY_SERVICE);
         if (null != tm) {
 
@@ -110,7 +108,6 @@ public class DeviceInfo {
         } else {
             hwSerialNumber = Build.SERIAL; // Will return 'unknown' for device >= Build.VERSION_CODES.O
         }
-
         return hwSerialNumber;
     }
 
@@ -140,12 +137,9 @@ public class DeviceInfo {
         double usedMemory = ((new Long(memoryInfo.totalMem - memoryInfo.availMem)).doubleValue()) / (1000 * 1000 * 1000);
         BigDecimal bd1 = new BigDecimal(allMemory);
         BigDecimal bd2 = new BigDecimal(usedMemory);
-
         BigDecimal allMemoryRounded = bd1.round(new MathContext(1, RoundingMode.HALF_UP));
         BigDecimal usedMemoryRounded = bd2.round(new MathContext(2, RoundingMode.HALF_UP));
-
         String memoryStatus = String.valueOf(usedMemoryRounded) + "GB" + " / " + String.valueOf(allMemoryRounded) + "GB";
-
         return memoryStatus;
     }
 
@@ -158,8 +152,6 @@ public class DeviceInfo {
         double usedMemory = ((new Long(memoryInfo.totalMem - memoryInfo.availMem)).doubleValue()) / (1000 * 1000 * 1000);
         double progressValueDouble = (usedMemory / allMemory) * 100;
         int progress = new Double(progressValueDouble).intValue();
-
-
         return progress;
     }
 }

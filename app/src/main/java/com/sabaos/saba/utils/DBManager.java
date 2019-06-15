@@ -17,7 +17,6 @@ public class DBManager {
     private SQLiteDatabase sqLiteDatabase;
     private Context context;
 
-
     public DBManager(Context context) {
 
         DBCreate dbCreate = new DBCreate(context, dbName, null, dbVersion);
@@ -33,7 +32,6 @@ public class DBManager {
         public DBCreate(@Nullable Context context, @Nullable String name, @Nullable SQLiteDatabase.CursorFactory factory, int version) {
             super(context, name, factory, version);
         }
-
 
         @Override
         public void onCreate(SQLiteDatabase db) {

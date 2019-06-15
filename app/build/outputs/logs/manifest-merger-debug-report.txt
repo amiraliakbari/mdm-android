@@ -1,0 +1,248 @@
+-- Merging decision tree log ---
+manifest
+ADDED from /home/kianian/Desktop/projects/1-MDM Projects/mdm-android/app/src/main/AndroidManifest.xml:2:1-52:12
+INJECTED from /home/kianian/Desktop/projects/1-MDM Projects/mdm-android/app/src/main/AndroidManifest.xml:2:1-52:12
+INJECTED from /home/kianian/Desktop/projects/1-MDM Projects/mdm-android/app/src/main/AndroidManifest.xml:2:1-52:12
+INJECTED from /home/kianian/Desktop/projects/1-MDM Projects/mdm-android/app/src/main/AndroidManifest.xml:2:1-52:12
+MERGED from [com.google.android.material:material:1.0.0-rc01] /home/kianian/.gradle/caches/transforms-1/files-1.1/material-1.0.0-rc01.aar/b6c0a32ed7bbcd7f1ab0f3ab8561b485/AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.appcompat:appcompat:1.0.0] /home/kianian/.gradle/caches/transforms-1/files-1.1/appcompat-1.0.0.aar/b2b039a58706c9abf021dcf438151385/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.constraintlayout:constraintlayout:1.1.2] /home/kianian/.gradle/caches/transforms-1/files-1.1/constraintlayout-1.1.2.aar/915c4f6bc56cb48230bd42d4a583b50c/AndroidManifest.xml:2:1-11:12
+MERGED from [com.github.sabaos-sdk:core:0.1.4] /home/kianian/.gradle/caches/transforms-1/files-1.1/core-0.1.4.aar/149e00e92217c34d68dca3c7fdf67229/AndroidManifest.xml:2:1-11:12
+MERGED from [com.android.volley:volley:1.1.1] /home/kianian/.gradle/caches/transforms-1/files-1.1/jetified-volley-1.1.1.aar/f441f9ec7989c899c19453868d736a9f/AndroidManifest.xml:2:1-11:12
+MERGED from [androidx.fragment:fragment:1.0.0] /home/kianian/.gradle/caches/transforms-1/files-1.1/fragment-1.0.0.aar/e1bc20c071dfdd98140b0647c50b87aa/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.vectordrawable:vectordrawable-animated:1.0.0] /home/kianian/.gradle/caches/transforms-1/files-1.1/vectordrawable-animated-1.0.0.aar/231852e5c908db04e4e8ed6c2cf0f4b0/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.recyclerview:recyclerview:1.0.0-rc01] /home/kianian/.gradle/caches/transforms-1/files-1.1/recyclerview-1.0.0-rc01.aar/67c7be1d40669ff66efe8a0b74f86f91/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.legacy:legacy-support-core-ui:1.0.0] /home/kianian/.gradle/caches/transforms-1/files-1.1/legacy-support-core-ui-1.0.0.aar/d3f112ddf874f77e5d34d754be9a9967/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.legacy:legacy-support-core-utils:1.0.0] /home/kianian/.gradle/caches/transforms-1/files-1.1/legacy-support-core-utils-1.0.0.aar/4045771380c1f454a9ec718956093645/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.vectordrawable:vectordrawable:1.0.0] /home/kianian/.gradle/caches/transforms-1/files-1.1/vectordrawable-1.0.0.aar/fbcff8b76a085edb6f9f9eee47edf771/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.transition:transition:1.0.0-rc01] /home/kianian/.gradle/caches/transforms-1/files-1.1/transition-1.0.0-rc01.aar/97eca9d8b302f948934d8818f4974d25/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.loader:loader:1.0.0] /home/kianian/.gradle/caches/transforms-1/files-1.1/loader-1.0.0.aar/46aeeafdbce39786202dbc9b16e0309e/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.viewpager:viewpager:1.0.0] /home/kianian/.gradle/caches/transforms-1/files-1.1/viewpager-1.0.0.aar/cc95d6c2e51a9e236323b1c8d0e4d81f/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.coordinatorlayout:coordinatorlayout:1.0.0] /home/kianian/.gradle/caches/transforms-1/files-1.1/coordinatorlayout-1.0.0.aar/5db5a3cff90942ae259c4847e458646e/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.drawerlayout:drawerlayout:1.0.0] /home/kianian/.gradle/caches/transforms-1/files-1.1/drawerlayout-1.0.0.aar/5b1de6351ad3beb6a5c7614d3dd8fc20/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.slidingpanelayout:slidingpanelayout:1.0.0] /home/kianian/.gradle/caches/transforms-1/files-1.1/slidingpanelayout-1.0.0.aar/05c7be6eda4fc3759fbf657c6df7546c/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.customview:customview:1.0.0] /home/kianian/.gradle/caches/transforms-1/files-1.1/customview-1.0.0.aar/e463f4420c26b33ddf710aa5c3766c58/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.swiperefreshlayout:swiperefreshlayout:1.0.0] /home/kianian/.gradle/caches/transforms-1/files-1.1/swiperefreshlayout-1.0.0.aar/b3a4172706735cc09f7bea79226a9b5b/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.asynclayoutinflater:asynclayoutinflater:1.0.0] /home/kianian/.gradle/caches/transforms-1/files-1.1/asynclayoutinflater-1.0.0.aar/f26b6a434f6317d2733b9758a398cf7d/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.core:core:1.0.0] /home/kianian/.gradle/caches/transforms-1/files-1.1/core-1.0.0.aar/578708f98ab150ba2b62350c70c4078b/AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.versionedparcelable:versionedparcelable:1.0.0] /home/kianian/.gradle/caches/transforms-1/files-1.1/versionedparcelable-1.0.0.aar/9aacf9a15f1e50b44f456177593d6d00/AndroidManifest.xml:17:1-25:12
+MERGED from [androidx.cursoradapter:cursoradapter:1.0.0] /home/kianian/.gradle/caches/transforms-1/files-1.1/cursoradapter-1.0.0.aar/f5584c9df0eae0df0e6994c1363ddc10/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.cardview:cardview:1.0.0-rc01] /home/kianian/.gradle/caches/transforms-1/files-1.1/cardview-1.0.0-rc01.aar/c4091a0b1ca0a19e6e286920f78b6c31/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.lifecycle:lifecycle-runtime:2.0.0] /home/kianian/.gradle/caches/transforms-1/files-1.1/lifecycle-runtime-2.0.0.aar/15f624b0ff65df50174527edd1c4306a/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.documentfile:documentfile:1.0.0] /home/kianian/.gradle/caches/transforms-1/files-1.1/documentfile-1.0.0.aar/cf1b5509b0ddd97ceae15446b2838ee0/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.localbroadcastmanager:localbroadcastmanager:1.0.0] /home/kianian/.gradle/caches/transforms-1/files-1.1/localbroadcastmanager-1.0.0.aar/fd4deadd6236ca378927882965b5c6fa/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.print:print:1.0.0] /home/kianian/.gradle/caches/transforms-1/files-1.1/print-1.0.0.aar/3bc634a6f20ab475c7f98a0040f694be/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.lifecycle:lifecycle-viewmodel:2.0.0] /home/kianian/.gradle/caches/transforms-1/files-1.1/lifecycle-viewmodel-2.0.0.aar/b1952a92b613ef7099b414fb25c089b7/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.lifecycle:lifecycle-livedata:2.0.0] /home/kianian/.gradle/caches/transforms-1/files-1.1/lifecycle-livedata-2.0.0.aar/34046a0e8d89c3eaf2363cbe9ec862ba/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.lifecycle:lifecycle-livedata-core:2.0.0] /home/kianian/.gradle/caches/transforms-1/files-1.1/lifecycle-livedata-core-2.0.0.aar/14ce10ea11a2c190a6e4fa5cfeca8464/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.arch.core:core-runtime:2.0.0] /home/kianian/.gradle/caches/transforms-1/files-1.1/core-runtime-2.0.0.aar/4294b80d745effb37815c4ba88a62354/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.interpolator:interpolator:1.0.0] /home/kianian/.gradle/caches/transforms-1/files-1.1/interpolator-1.0.0.aar/bb47ea7c83053f18940cca5b3bc8bdf8/AndroidManifest.xml:17:1-22:12
+INJECTED from /home/kianian/Desktop/projects/1-MDM Projects/mdm-android/app/src/main/AndroidManifest.xml:2:1-52:12
+INJECTED from /home/kianian/Desktop/projects/1-MDM Projects/mdm-android/app/src/main/AndroidManifest.xml:2:1-52:12
+INJECTED from /home/kianian/Desktop/projects/1-MDM Projects/mdm-android/app/src/main/AndroidManifest.xml:2:1-52:12
+	package
+		ADDED from /home/kianian/Desktop/projects/1-MDM Projects/mdm-android/app/src/main/AndroidManifest.xml:4:5-30
+		INJECTED from /home/kianian/Desktop/projects/1-MDM Projects/mdm-android/app/src/main/AndroidManifest.xml
+		INJECTED from /home/kianian/Desktop/projects/1-MDM Projects/mdm-android/app/src/main/AndroidManifest.xml
+	android:versionName
+		INJECTED from /home/kianian/Desktop/projects/1-MDM Projects/mdm-android/app/src/main/AndroidManifest.xml
+		ADDED from /home/kianian/Desktop/projects/1-MDM Projects/mdm-android/app/src/main/AndroidManifest.xml:2:1-52:12
+		INJECTED from /home/kianian/Desktop/projects/1-MDM Projects/mdm-android/app/src/main/AndroidManifest.xml
+	xmlns:tools
+		ADDED from /home/kianian/Desktop/projects/1-MDM Projects/mdm-android/app/src/main/AndroidManifest.xml:3:5-51
+	android:versionCode
+		INJECTED from /home/kianian/Desktop/projects/1-MDM Projects/mdm-android/app/src/main/AndroidManifest.xml
+		ADDED from /home/kianian/Desktop/projects/1-MDM Projects/mdm-android/app/src/main/AndroidManifest.xml:2:1-52:12
+		INJECTED from /home/kianian/Desktop/projects/1-MDM Projects/mdm-android/app/src/main/AndroidManifest.xml
+	xmlns:android
+		ADDED from /home/kianian/Desktop/projects/1-MDM Projects/mdm-android/app/src/main/AndroidManifest.xml:2:11-69
+uses-permission#android.permission.INTERNET
+ADDED from /home/kianian/Desktop/projects/1-MDM Projects/mdm-android/app/src/main/AndroidManifest.xml:6:5-67
+	android:name
+		ADDED from /home/kianian/Desktop/projects/1-MDM Projects/mdm-android/app/src/main/AndroidManifest.xml:6:22-64
+uses-permission#android.permission.SYSTEM_ALERT_WINDOW
+ADDED from /home/kianian/Desktop/projects/1-MDM Projects/mdm-android/app/src/main/AndroidManifest.xml:7:5-78
+	android:name
+		ADDED from /home/kianian/Desktop/projects/1-MDM Projects/mdm-android/app/src/main/AndroidManifest.xml:7:22-75
+uses-permission#android.permission.FOREGROUND_SERVICE
+ADDED from /home/kianian/Desktop/projects/1-MDM Projects/mdm-android/app/src/main/AndroidManifest.xml:8:5-77
+	android:name
+		ADDED from /home/kianian/Desktop/projects/1-MDM Projects/mdm-android/app/src/main/AndroidManifest.xml:8:22-74
+uses-permission#android.permission.RECEIVE_BOOT_COMPLETED
+ADDED from /home/kianian/Desktop/projects/1-MDM Projects/mdm-android/app/src/main/AndroidManifest.xml:9:5-81
+	android:name
+		ADDED from /home/kianian/Desktop/projects/1-MDM Projects/mdm-android/app/src/main/AndroidManifest.xml:9:22-78
+uses-permission#android.permission.ACCESS_NETWORK_STATE
+ADDED from /home/kianian/Desktop/projects/1-MDM Projects/mdm-android/app/src/main/AndroidManifest.xml:10:5-79
+	android:name
+		ADDED from /home/kianian/Desktop/projects/1-MDM Projects/mdm-android/app/src/main/AndroidManifest.xml:10:22-76
+uses-permission#android.permission.VIBRATE
+ADDED from /home/kianian/Desktop/projects/1-MDM Projects/mdm-android/app/src/main/AndroidManifest.xml:11:5-66
+	android:name
+		ADDED from /home/kianian/Desktop/projects/1-MDM Projects/mdm-android/app/src/main/AndroidManifest.xml:11:22-63
+uses-permission#android.permission.READ_PHONE_STATE
+ADDED from /home/kianian/Desktop/projects/1-MDM Projects/mdm-android/app/src/main/AndroidManifest.xml:12:5-75
+	android:name
+		ADDED from /home/kianian/Desktop/projects/1-MDM Projects/mdm-android/app/src/main/AndroidManifest.xml:12:22-72
+uses-permission#android.permission.CALL_PHONE
+ADDED from /home/kianian/Desktop/projects/1-MDM Projects/mdm-android/app/src/main/AndroidManifest.xml:13:5-69
+	android:name
+		ADDED from /home/kianian/Desktop/projects/1-MDM Projects/mdm-android/app/src/main/AndroidManifest.xml:13:22-66
+application
+ADDED from /home/kianian/Desktop/projects/1-MDM Projects/mdm-android/app/src/main/AndroidManifest.xml:15:5-50:19
+MERGED from [com.google.android.material:material:1.0.0-rc01] /home/kianian/.gradle/caches/transforms-1/files-1.1/material-1.0.0-rc01.aar/b6c0a32ed7bbcd7f1ab0f3ab8561b485/AndroidManifest.xml:22:5-20
+MERGED from [com.google.android.material:material:1.0.0-rc01] /home/kianian/.gradle/caches/transforms-1/files-1.1/material-1.0.0-rc01.aar/b6c0a32ed7bbcd7f1ab0f3ab8561b485/AndroidManifest.xml:22:5-20
+MERGED from [androidx.constraintlayout:constraintlayout:1.1.2] /home/kianian/.gradle/caches/transforms-1/files-1.1/constraintlayout-1.1.2.aar/915c4f6bc56cb48230bd42d4a583b50c/AndroidManifest.xml:9:5-20
+MERGED from [androidx.constraintlayout:constraintlayout:1.1.2] /home/kianian/.gradle/caches/transforms-1/files-1.1/constraintlayout-1.1.2.aar/915c4f6bc56cb48230bd42d4a583b50c/AndroidManifest.xml:9:5-20
+MERGED from [com.android.volley:volley:1.1.1] /home/kianian/.gradle/caches/transforms-1/files-1.1/jetified-volley-1.1.1.aar/f441f9ec7989c899c19453868d736a9f/AndroidManifest.xml:9:5-20
+MERGED from [com.android.volley:volley:1.1.1] /home/kianian/.gradle/caches/transforms-1/files-1.1/jetified-volley-1.1.1.aar/f441f9ec7989c899c19453868d736a9f/AndroidManifest.xml:9:5-20
+MERGED from [androidx.core:core:1.0.0] /home/kianian/.gradle/caches/transforms-1/files-1.1/core-1.0.0.aar/578708f98ab150ba2b62350c70c4078b/AndroidManifest.xml:22:5-89
+MERGED from [androidx.core:core:1.0.0] /home/kianian/.gradle/caches/transforms-1/files-1.1/core-1.0.0.aar/578708f98ab150ba2b62350c70c4078b/AndroidManifest.xml:22:5-89
+MERGED from [androidx.versionedparcelable:versionedparcelable:1.0.0] /home/kianian/.gradle/caches/transforms-1/files-1.1/versionedparcelable-1.0.0.aar/9aacf9a15f1e50b44f456177593d6d00/AndroidManifest.xml:22:5-23:19
+MERGED from [androidx.versionedparcelable:versionedparcelable:1.0.0] /home/kianian/.gradle/caches/transforms-1/files-1.1/versionedparcelable-1.0.0.aar/9aacf9a15f1e50b44f456177593d6d00/AndroidManifest.xml:22:5-23:19
+	android:appComponentFactory
+		ADDED from [androidx.core:core:1.0.0] /home/kianian/.gradle/caches/transforms-1/files-1.1/core-1.0.0.aar/578708f98ab150ba2b62350c70c4078b/AndroidManifest.xml:22:18-86
+	android:supportsRtl
+		ADDED from /home/kianian/Desktop/projects/1-MDM Projects/mdm-android/app/src/main/AndroidManifest.xml:22:9-35
+	android:label
+		ADDED from /home/kianian/Desktop/projects/1-MDM Projects/mdm-android/app/src/main/AndroidManifest.xml:19:9-41
+	android:hardwareAccelerated
+		ADDED from /home/kianian/Desktop/projects/1-MDM Projects/mdm-android/app/src/main/AndroidManifest.xml:17:9-44
+	android:roundIcon
+		ADDED from /home/kianian/Desktop/projects/1-MDM Projects/mdm-android/app/src/main/AndroidManifest.xml:21:9-44
+	android:largeHeap
+		ADDED from /home/kianian/Desktop/projects/1-MDM Projects/mdm-android/app/src/main/AndroidManifest.xml:20:9-33
+	android:icon
+		ADDED from /home/kianian/Desktop/projects/1-MDM Projects/mdm-android/app/src/main/AndroidManifest.xml:18:9-39
+	android:allowBackup
+		ADDED from /home/kianian/Desktop/projects/1-MDM Projects/mdm-android/app/src/main/AndroidManifest.xml:16:9-35
+	android:theme
+		ADDED from /home/kianian/Desktop/projects/1-MDM Projects/mdm-android/app/src/main/AndroidManifest.xml:23:9-40
+service#com.sabaos.saba.service.MyIntentService
+ADDED from /home/kianian/Desktop/projects/1-MDM Projects/mdm-android/app/src/main/AndroidManifest.xml:24:9-27:46
+	android:enabled
+		ADDED from /home/kianian/Desktop/projects/1-MDM Projects/mdm-android/app/src/main/AndroidManifest.xml:27:13-35
+	android:exported
+		ADDED from /home/kianian/Desktop/projects/1-MDM Projects/mdm-android/app/src/main/AndroidManifest.xml:26:13-36
+	android:name
+		ADDED from /home/kianian/Desktop/projects/1-MDM Projects/mdm-android/app/src/main/AndroidManifest.xml:25:13-52
+activity#com.sabaos.saba.MainActivity
+ADDED from /home/kianian/Desktop/projects/1-MDM Projects/mdm-android/app/src/main/AndroidManifest.xml:28:9-38:20
+	android:label
+		ADDED from /home/kianian/Desktop/projects/1-MDM Projects/mdm-android/app/src/main/AndroidManifest.xml:30:13-45
+	android:windowSoftInputMode
+		ADDED from /home/kianian/Desktop/projects/1-MDM Projects/mdm-android/app/src/main/AndroidManifest.xml:32:13-55
+	android:theme
+		ADDED from /home/kianian/Desktop/projects/1-MDM Projects/mdm-android/app/src/main/AndroidManifest.xml:31:13-56
+	android:name
+		ADDED from /home/kianian/Desktop/projects/1-MDM Projects/mdm-android/app/src/main/AndroidManifest.xml:29:13-41
+intent-filter#action:name:android.intent.action.MAIN+category:name:android.intent.category.LAUNCHER
+ADDED from /home/kianian/Desktop/projects/1-MDM Projects/mdm-android/app/src/main/AndroidManifest.xml:33:13-37:29
+action#android.intent.action.MAIN
+ADDED from /home/kianian/Desktop/projects/1-MDM Projects/mdm-android/app/src/main/AndroidManifest.xml:34:17-69
+	android:name
+		ADDED from /home/kianian/Desktop/projects/1-MDM Projects/mdm-android/app/src/main/AndroidManifest.xml:34:25-66
+category#android.intent.category.LAUNCHER
+ADDED from /home/kianian/Desktop/projects/1-MDM Projects/mdm-android/app/src/main/AndroidManifest.xml:36:17-77
+	android:name
+		ADDED from /home/kianian/Desktop/projects/1-MDM Projects/mdm-android/app/src/main/AndroidManifest.xml:36:27-74
+service#com.sabaos.saba.service.WebSocketService
+ADDED from /home/kianian/Desktop/projects/1-MDM Projects/mdm-android/app/src/main/AndroidManifest.xml:40:9-61
+	android:name
+		ADDED from /home/kianian/Desktop/projects/1-MDM Projects/mdm-android/app/src/main/AndroidManifest.xml:40:18-58
+service#com.sabaos.saba.service.MDMService
+ADDED from /home/kianian/Desktop/projects/1-MDM Projects/mdm-android/app/src/main/AndroidManifest.xml:41:9-43:72
+	android:permission
+		ADDED from /home/kianian/Desktop/projects/1-MDM Projects/mdm-android/app/src/main/AndroidManifest.xml:43:13-69
+	android:name
+		ADDED from /home/kianian/Desktop/projects/1-MDM Projects/mdm-android/app/src/main/AndroidManifest.xml:42:13-47
+receiver#com.sabaos.saba.init.BootCompletedReceiver
+ADDED from /home/kianian/Desktop/projects/1-MDM Projects/mdm-android/app/src/main/AndroidManifest.xml:45:9-49:20
+	android:name
+		ADDED from /home/kianian/Desktop/projects/1-MDM Projects/mdm-android/app/src/main/AndroidManifest.xml:45:19-61
+intent-filter#action:name:android.intent.action.BOOT_COMPLETED
+ADDED from /home/kianian/Desktop/projects/1-MDM Projects/mdm-android/app/src/main/AndroidManifest.xml:46:13-48:29
+action#android.intent.action.BOOT_COMPLETED
+ADDED from /home/kianian/Desktop/projects/1-MDM Projects/mdm-android/app/src/main/AndroidManifest.xml:47:17-79
+	android:name
+		ADDED from /home/kianian/Desktop/projects/1-MDM Projects/mdm-android/app/src/main/AndroidManifest.xml:47:25-76
+uses-sdk
+INJECTED from /home/kianian/Desktop/projects/1-MDM Projects/mdm-android/app/src/main/AndroidManifest.xml reason: use-sdk injection requested
+INJECTED from /home/kianian/Desktop/projects/1-MDM Projects/mdm-android/app/src/main/AndroidManifest.xml
+INJECTED from /home/kianian/Desktop/projects/1-MDM Projects/mdm-android/app/src/main/AndroidManifest.xml
+MERGED from [com.google.android.material:material:1.0.0-rc01] /home/kianian/.gradle/caches/transforms-1/files-1.1/material-1.0.0-rc01.aar/b6c0a32ed7bbcd7f1ab0f3ab8561b485/AndroidManifest.xml:20:5-44
+MERGED from [com.google.android.material:material:1.0.0-rc01] /home/kianian/.gradle/caches/transforms-1/files-1.1/material-1.0.0-rc01.aar/b6c0a32ed7bbcd7f1ab0f3ab8561b485/AndroidManifest.xml:20:5-44
+MERGED from [androidx.appcompat:appcompat:1.0.0] /home/kianian/.gradle/caches/transforms-1/files-1.1/appcompat-1.0.0.aar/b2b039a58706c9abf021dcf438151385/AndroidManifest.xml:20:5-44
+MERGED from [androidx.appcompat:appcompat:1.0.0] /home/kianian/.gradle/caches/transforms-1/files-1.1/appcompat-1.0.0.aar/b2b039a58706c9abf021dcf438151385/AndroidManifest.xml:20:5-44
+MERGED from [androidx.constraintlayout:constraintlayout:1.1.2] /home/kianian/.gradle/caches/transforms-1/files-1.1/constraintlayout-1.1.2.aar/915c4f6bc56cb48230bd42d4a583b50c/AndroidManifest.xml:5:5-7:41
+MERGED from [androidx.constraintlayout:constraintlayout:1.1.2] /home/kianian/.gradle/caches/transforms-1/files-1.1/constraintlayout-1.1.2.aar/915c4f6bc56cb48230bd42d4a583b50c/AndroidManifest.xml:5:5-7:41
+MERGED from [com.github.sabaos-sdk:core:0.1.4] /home/kianian/.gradle/caches/transforms-1/files-1.1/core-0.1.4.aar/149e00e92217c34d68dca3c7fdf67229/AndroidManifest.xml:7:5-9:41
+MERGED from [com.github.sabaos-sdk:core:0.1.4] /home/kianian/.gradle/caches/transforms-1/files-1.1/core-0.1.4.aar/149e00e92217c34d68dca3c7fdf67229/AndroidManifest.xml:7:5-9:41
+MERGED from [com.android.volley:volley:1.1.1] /home/kianian/.gradle/caches/transforms-1/files-1.1/jetified-volley-1.1.1.aar/f441f9ec7989c899c19453868d736a9f/AndroidManifest.xml:7:5-43
+MERGED from [com.android.volley:volley:1.1.1] /home/kianian/.gradle/caches/transforms-1/files-1.1/jetified-volley-1.1.1.aar/f441f9ec7989c899c19453868d736a9f/AndroidManifest.xml:7:5-43
+MERGED from [androidx.fragment:fragment:1.0.0] /home/kianian/.gradle/caches/transforms-1/files-1.1/fragment-1.0.0.aar/e1bc20c071dfdd98140b0647c50b87aa/AndroidManifest.xml:20:5-44
+MERGED from [androidx.fragment:fragment:1.0.0] /home/kianian/.gradle/caches/transforms-1/files-1.1/fragment-1.0.0.aar/e1bc20c071dfdd98140b0647c50b87aa/AndroidManifest.xml:20:5-44
+MERGED from [androidx.vectordrawable:vectordrawable-animated:1.0.0] /home/kianian/.gradle/caches/transforms-1/files-1.1/vectordrawable-animated-1.0.0.aar/231852e5c908db04e4e8ed6c2cf0f4b0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.vectordrawable:vectordrawable-animated:1.0.0] /home/kianian/.gradle/caches/transforms-1/files-1.1/vectordrawable-animated-1.0.0.aar/231852e5c908db04e4e8ed6c2cf0f4b0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.recyclerview:recyclerview:1.0.0-rc01] /home/kianian/.gradle/caches/transforms-1/files-1.1/recyclerview-1.0.0-rc01.aar/67c7be1d40669ff66efe8a0b74f86f91/AndroidManifest.xml:20:5-44
+MERGED from [androidx.recyclerview:recyclerview:1.0.0-rc01] /home/kianian/.gradle/caches/transforms-1/files-1.1/recyclerview-1.0.0-rc01.aar/67c7be1d40669ff66efe8a0b74f86f91/AndroidManifest.xml:20:5-44
+MERGED from [androidx.legacy:legacy-support-core-ui:1.0.0] /home/kianian/.gradle/caches/transforms-1/files-1.1/legacy-support-core-ui-1.0.0.aar/d3f112ddf874f77e5d34d754be9a9967/AndroidManifest.xml:20:5-44
+MERGED from [androidx.legacy:legacy-support-core-ui:1.0.0] /home/kianian/.gradle/caches/transforms-1/files-1.1/legacy-support-core-ui-1.0.0.aar/d3f112ddf874f77e5d34d754be9a9967/AndroidManifest.xml:20:5-44
+MERGED from [androidx.legacy:legacy-support-core-utils:1.0.0] /home/kianian/.gradle/caches/transforms-1/files-1.1/legacy-support-core-utils-1.0.0.aar/4045771380c1f454a9ec718956093645/AndroidManifest.xml:20:5-44
+MERGED from [androidx.legacy:legacy-support-core-utils:1.0.0] /home/kianian/.gradle/caches/transforms-1/files-1.1/legacy-support-core-utils-1.0.0.aar/4045771380c1f454a9ec718956093645/AndroidManifest.xml:20:5-44
+MERGED from [androidx.vectordrawable:vectordrawable:1.0.0] /home/kianian/.gradle/caches/transforms-1/files-1.1/vectordrawable-1.0.0.aar/fbcff8b76a085edb6f9f9eee47edf771/AndroidManifest.xml:20:5-44
+MERGED from [androidx.vectordrawable:vectordrawable:1.0.0] /home/kianian/.gradle/caches/transforms-1/files-1.1/vectordrawable-1.0.0.aar/fbcff8b76a085edb6f9f9eee47edf771/AndroidManifest.xml:20:5-44
+MERGED from [androidx.transition:transition:1.0.0-rc01] /home/kianian/.gradle/caches/transforms-1/files-1.1/transition-1.0.0-rc01.aar/97eca9d8b302f948934d8818f4974d25/AndroidManifest.xml:20:5-44
+MERGED from [androidx.transition:transition:1.0.0-rc01] /home/kianian/.gradle/caches/transforms-1/files-1.1/transition-1.0.0-rc01.aar/97eca9d8b302f948934d8818f4974d25/AndroidManifest.xml:20:5-44
+MERGED from [androidx.loader:loader:1.0.0] /home/kianian/.gradle/caches/transforms-1/files-1.1/loader-1.0.0.aar/46aeeafdbce39786202dbc9b16e0309e/AndroidManifest.xml:20:5-44
+MERGED from [androidx.loader:loader:1.0.0] /home/kianian/.gradle/caches/transforms-1/files-1.1/loader-1.0.0.aar/46aeeafdbce39786202dbc9b16e0309e/AndroidManifest.xml:20:5-44
+MERGED from [androidx.viewpager:viewpager:1.0.0] /home/kianian/.gradle/caches/transforms-1/files-1.1/viewpager-1.0.0.aar/cc95d6c2e51a9e236323b1c8d0e4d81f/AndroidManifest.xml:20:5-44
+MERGED from [androidx.viewpager:viewpager:1.0.0] /home/kianian/.gradle/caches/transforms-1/files-1.1/viewpager-1.0.0.aar/cc95d6c2e51a9e236323b1c8d0e4d81f/AndroidManifest.xml:20:5-44
+MERGED from [androidx.coordinatorlayout:coordinatorlayout:1.0.0] /home/kianian/.gradle/caches/transforms-1/files-1.1/coordinatorlayout-1.0.0.aar/5db5a3cff90942ae259c4847e458646e/AndroidManifest.xml:20:5-44
+MERGED from [androidx.coordinatorlayout:coordinatorlayout:1.0.0] /home/kianian/.gradle/caches/transforms-1/files-1.1/coordinatorlayout-1.0.0.aar/5db5a3cff90942ae259c4847e458646e/AndroidManifest.xml:20:5-44
+MERGED from [androidx.drawerlayout:drawerlayout:1.0.0] /home/kianian/.gradle/caches/transforms-1/files-1.1/drawerlayout-1.0.0.aar/5b1de6351ad3beb6a5c7614d3dd8fc20/AndroidManifest.xml:20:5-44
+MERGED from [androidx.drawerlayout:drawerlayout:1.0.0] /home/kianian/.gradle/caches/transforms-1/files-1.1/drawerlayout-1.0.0.aar/5b1de6351ad3beb6a5c7614d3dd8fc20/AndroidManifest.xml:20:5-44
+MERGED from [androidx.slidingpanelayout:slidingpanelayout:1.0.0] /home/kianian/.gradle/caches/transforms-1/files-1.1/slidingpanelayout-1.0.0.aar/05c7be6eda4fc3759fbf657c6df7546c/AndroidManifest.xml:20:5-44
+MERGED from [androidx.slidingpanelayout:slidingpanelayout:1.0.0] /home/kianian/.gradle/caches/transforms-1/files-1.1/slidingpanelayout-1.0.0.aar/05c7be6eda4fc3759fbf657c6df7546c/AndroidManifest.xml:20:5-44
+MERGED from [androidx.customview:customview:1.0.0] /home/kianian/.gradle/caches/transforms-1/files-1.1/customview-1.0.0.aar/e463f4420c26b33ddf710aa5c3766c58/AndroidManifest.xml:20:5-44
+MERGED from [androidx.customview:customview:1.0.0] /home/kianian/.gradle/caches/transforms-1/files-1.1/customview-1.0.0.aar/e463f4420c26b33ddf710aa5c3766c58/AndroidManifest.xml:20:5-44
+MERGED from [androidx.swiperefreshlayout:swiperefreshlayout:1.0.0] /home/kianian/.gradle/caches/transforms-1/files-1.1/swiperefreshlayout-1.0.0.aar/b3a4172706735cc09f7bea79226a9b5b/AndroidManifest.xml:20:5-44
+MERGED from [androidx.swiperefreshlayout:swiperefreshlayout:1.0.0] /home/kianian/.gradle/caches/transforms-1/files-1.1/swiperefreshlayout-1.0.0.aar/b3a4172706735cc09f7bea79226a9b5b/AndroidManifest.xml:20:5-44
+MERGED from [androidx.asynclayoutinflater:asynclayoutinflater:1.0.0] /home/kianian/.gradle/caches/transforms-1/files-1.1/asynclayoutinflater-1.0.0.aar/f26b6a434f6317d2733b9758a398cf7d/AndroidManifest.xml:20:5-44
+MERGED from [androidx.asynclayoutinflater:asynclayoutinflater:1.0.0] /home/kianian/.gradle/caches/transforms-1/files-1.1/asynclayoutinflater-1.0.0.aar/f26b6a434f6317d2733b9758a398cf7d/AndroidManifest.xml:20:5-44
+MERGED from [androidx.core:core:1.0.0] /home/kianian/.gradle/caches/transforms-1/files-1.1/core-1.0.0.aar/578708f98ab150ba2b62350c70c4078b/AndroidManifest.xml:20:5-44
+MERGED from [androidx.core:core:1.0.0] /home/kianian/.gradle/caches/transforms-1/files-1.1/core-1.0.0.aar/578708f98ab150ba2b62350c70c4078b/AndroidManifest.xml:20:5-44
+MERGED from [androidx.versionedparcelable:versionedparcelable:1.0.0] /home/kianian/.gradle/caches/transforms-1/files-1.1/versionedparcelable-1.0.0.aar/9aacf9a15f1e50b44f456177593d6d00/AndroidManifest.xml:20:5-44
+MERGED from [androidx.versionedparcelable:versionedparcelable:1.0.0] /home/kianian/.gradle/caches/transforms-1/files-1.1/versionedparcelable-1.0.0.aar/9aacf9a15f1e50b44f456177593d6d00/AndroidManifest.xml:20:5-44
+MERGED from [androidx.cursoradapter:cursoradapter:1.0.0] /home/kianian/.gradle/caches/transforms-1/files-1.1/cursoradapter-1.0.0.aar/f5584c9df0eae0df0e6994c1363ddc10/AndroidManifest.xml:20:5-44
+MERGED from [androidx.cursoradapter:cursoradapter:1.0.0] /home/kianian/.gradle/caches/transforms-1/files-1.1/cursoradapter-1.0.0.aar/f5584c9df0eae0df0e6994c1363ddc10/AndroidManifest.xml:20:5-44
+MERGED from [androidx.cardview:cardview:1.0.0-rc01] /home/kianian/.gradle/caches/transforms-1/files-1.1/cardview-1.0.0-rc01.aar/c4091a0b1ca0a19e6e286920f78b6c31/AndroidManifest.xml:20:5-44
+MERGED from [androidx.cardview:cardview:1.0.0-rc01] /home/kianian/.gradle/caches/transforms-1/files-1.1/cardview-1.0.0-rc01.aar/c4091a0b1ca0a19e6e286920f78b6c31/AndroidManifest.xml:20:5-44
+MERGED from [androidx.lifecycle:lifecycle-runtime:2.0.0] /home/kianian/.gradle/caches/transforms-1/files-1.1/lifecycle-runtime-2.0.0.aar/15f624b0ff65df50174527edd1c4306a/AndroidManifest.xml:20:5-44
+MERGED from [androidx.lifecycle:lifecycle-runtime:2.0.0] /home/kianian/.gradle/caches/transforms-1/files-1.1/lifecycle-runtime-2.0.0.aar/15f624b0ff65df50174527edd1c4306a/AndroidManifest.xml:20:5-44
+MERGED from [androidx.documentfile:documentfile:1.0.0] /home/kianian/.gradle/caches/transforms-1/files-1.1/documentfile-1.0.0.aar/cf1b5509b0ddd97ceae15446b2838ee0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.documentfile:documentfile:1.0.0] /home/kianian/.gradle/caches/transforms-1/files-1.1/documentfile-1.0.0.aar/cf1b5509b0ddd97ceae15446b2838ee0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.localbroadcastmanager:localbroadcastmanager:1.0.0] /home/kianian/.gradle/caches/transforms-1/files-1.1/localbroadcastmanager-1.0.0.aar/fd4deadd6236ca378927882965b5c6fa/AndroidManifest.xml:20:5-44
+MERGED from [androidx.localbroadcastmanager:localbroadcastmanager:1.0.0] /home/kianian/.gradle/caches/transforms-1/files-1.1/localbroadcastmanager-1.0.0.aar/fd4deadd6236ca378927882965b5c6fa/AndroidManifest.xml:20:5-44
+MERGED from [androidx.print:print:1.0.0] /home/kianian/.gradle/caches/transforms-1/files-1.1/print-1.0.0.aar/3bc634a6f20ab475c7f98a0040f694be/AndroidManifest.xml:20:5-44
+MERGED from [androidx.print:print:1.0.0] /home/kianian/.gradle/caches/transforms-1/files-1.1/print-1.0.0.aar/3bc634a6f20ab475c7f98a0040f694be/AndroidManifest.xml:20:5-44
+MERGED from [androidx.lifecycle:lifecycle-viewmodel:2.0.0] /home/kianian/.gradle/caches/transforms-1/files-1.1/lifecycle-viewmodel-2.0.0.aar/b1952a92b613ef7099b414fb25c089b7/AndroidManifest.xml:20:5-44
+MERGED from [androidx.lifecycle:lifecycle-viewmodel:2.0.0] /home/kianian/.gradle/caches/transforms-1/files-1.1/lifecycle-viewmodel-2.0.0.aar/b1952a92b613ef7099b414fb25c089b7/AndroidManifest.xml:20:5-44
+MERGED from [androidx.lifecycle:lifecycle-livedata:2.0.0] /home/kianian/.gradle/caches/transforms-1/files-1.1/lifecycle-livedata-2.0.0.aar/34046a0e8d89c3eaf2363cbe9ec862ba/AndroidManifest.xml:20:5-44
+MERGED from [androidx.lifecycle:lifecycle-livedata:2.0.0] /home/kianian/.gradle/caches/transforms-1/files-1.1/lifecycle-livedata-2.0.0.aar/34046a0e8d89c3eaf2363cbe9ec862ba/AndroidManifest.xml:20:5-44
+MERGED from [androidx.lifecycle:lifecycle-livedata-core:2.0.0] /home/kianian/.gradle/caches/transforms-1/files-1.1/lifecycle-livedata-core-2.0.0.aar/14ce10ea11a2c190a6e4fa5cfeca8464/AndroidManifest.xml:20:5-44
+MERGED from [androidx.lifecycle:lifecycle-livedata-core:2.0.0] /home/kianian/.gradle/caches/transforms-1/files-1.1/lifecycle-livedata-core-2.0.0.aar/14ce10ea11a2c190a6e4fa5cfeca8464/AndroidManifest.xml:20:5-44
+MERGED from [androidx.arch.core:core-runtime:2.0.0] /home/kianian/.gradle/caches/transforms-1/files-1.1/core-runtime-2.0.0.aar/4294b80d745effb37815c4ba88a62354/AndroidManifest.xml:20:5-44
+MERGED from [androidx.arch.core:core-runtime:2.0.0] /home/kianian/.gradle/caches/transforms-1/files-1.1/core-runtime-2.0.0.aar/4294b80d745effb37815c4ba88a62354/AndroidManifest.xml:20:5-44
+MERGED from [androidx.interpolator:interpolator:1.0.0] /home/kianian/.gradle/caches/transforms-1/files-1.1/interpolator-1.0.0.aar/bb47ea7c83053f18940cca5b3bc8bdf8/AndroidManifest.xml:20:5-44
+MERGED from [androidx.interpolator:interpolator:1.0.0] /home/kianian/.gradle/caches/transforms-1/files-1.1/interpolator-1.0.0.aar/bb47ea7c83053f18940cca5b3bc8bdf8/AndroidManifest.xml:20:5-44
+INJECTED from /home/kianian/Desktop/projects/1-MDM Projects/mdm-android/app/src/main/AndroidManifest.xml
+INJECTED from /home/kianian/Desktop/projects/1-MDM Projects/mdm-android/app/src/main/AndroidManifest.xml
+	android:targetSdkVersion
+		INJECTED from /home/kianian/Desktop/projects/1-MDM Projects/mdm-android/app/src/main/AndroidManifest.xml
+		ADDED from /home/kianian/Desktop/projects/1-MDM Projects/mdm-android/app/src/main/AndroidManifest.xml
+		INJECTED from /home/kianian/Desktop/projects/1-MDM Projects/mdm-android/app/src/main/AndroidManifest.xml
+	android:minSdkVersion
+		INJECTED from /home/kianian/Desktop/projects/1-MDM Projects/mdm-android/app/src/main/AndroidManifest.xml
+		ADDED from /home/kianian/Desktop/projects/1-MDM Projects/mdm-android/app/src/main/AndroidManifest.xml
+		INJECTED from /home/kianian/Desktop/projects/1-MDM Projects/mdm-android/app/src/main/AndroidManifest.xml

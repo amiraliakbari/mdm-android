@@ -9,8 +9,7 @@ import android.util.Log;
 import org.json.JSONException;
 import org.json.JSONObject;
 
-import static com.sabaos.saba.utils.RegisterApp.marketTimer;
-import static com.sabaos.saba.utils.RegisterApp.riotTimer;
+import static com.sabaos.saba.utils.RegisterApp.registerAppTimer;
 import static com.sabaos.saba.service.WebSocketService.sharedPref;
 import static com.sabaos.saba.service.WebSocketService.ws;
 
@@ -34,78 +33,37 @@ public class MessageHandle {
                     break;
 
                 case "registerApp":
-                    if (jsonObject.getString("app").equalsIgnoreCase("com.sabaos.testmarketapp")) {
+                    if (jsonObject.getString("result").equalsIgnoreCase("success")) {
 
-                        if (jsonObject.getString("result").equalsIgnoreCase("success")) {
+                        Log.i("app registration", "success");
+                        String app = jsonObject.getString("app");
+                        sharedPref.saveData(app + "IsRegistered", "true");
+                        registerAppTimer.cancel();
+                    } else Log.i("app registration", "failure");
 
-                            Log.i("app registration", "success");
-                            sharedPref.saveData("IsMarketRegistered", "true");
-                            marketTimer.cancel();
-                            marketTimer.purge();
-                        }
-                        Log.i("app registration", "failure");
-
-
-                    } else if (jsonObject.getString("app").equalsIgnoreCase("com.sabaos.testriotapp")) {
-
-                        if (jsonObject.getString("result").equalsIgnoreCase("success")) {
-
-                            Log.i("app registration", "success");
-                            sharedPref.saveData("IsRiotRegistered", "true");
-                            riotTimer.cancel();
-                            riotTimer.purge();
-                        }
-                        Log.i("app registration", "failure");
-
-                    }
                     break;
 
                 case "push":
 
                     String app = jsonObject.getString("app");
-                    if (app.equalsIgnoreCase("com.sabaos.testmarketapp")) {
-                        Intent intent = new Intent();
-                        intent.putExtra("type", "push");
-                        intent.putExtra("data", jsonObject.getString("data"));
-                        intent.setComponent(new ComponentName("com.sabaos.testmarketapp", "com.sabaos.testmarketapp.MyIntentService"));
-                        if (Build.VERSION.SDK_INT >= 26) {
-                            context.startForegroundService(intent);
-                        } else {
-                            context.startService(intent);
-                        }
+                    Intent intent = new Intent();
+                    intent.putExtra("type", "push");
+                    intent.putExtra("data", jsonObject.getString("data"));
+                    intent.setComponent(new ComponentName(app, app + ".SabaClientService"));
+                    if (Build.VERSION.SDK_INT >= 26) {
+                        context.startForegroundService(intent);
+                    } else {
+                        context.startService(intent);
+                    }
 
-                        //send ack back to server
-                        String ack = "{" +
-                                "\"type\":\"push\"," +
-                                "\"token\":\"" + new SharedPref(context).loadData("marketToken") +
-                                "\",\"data\":\"" + jsonObject.getString("data") + "\"" +
-                                "\"result\":\"success\"" +
-                                "}";
-                        ws.send(ack);
-
-                    } else if (app.equalsIgnoreCase("com.sabaos.testriotapp")) {
-
-                        Intent intent = new Intent();
-                        intent.putExtra("type", "push");
-                        intent.putExtra("data", jsonObject.getString("data"));
-                        intent.setComponent(new ComponentName("com.sabaos.testriotapp", "com.sabaos.testriotapp.MyIntentService"));
-                        if (Build.VERSION.SDK_INT >= 26) {
-                            context.startForegroundService(intent);
-                        } else {
-                            context.startService(intent);
-                        }
-
-                        //send ack back to server
-                        String ack = "{" +
-                                "\"type\":\"push\"," +
-                                "\"token\":\"" + new SharedPref(context).loadData("riotToken") +
-                                "\",\"data\":\"" + jsonObject.getString("data") + "\"" +
-                                "\"result\":\"success\"" +
-                                "}";
-                        ws.send(ack);
-
-                    } else
-                        Log.i("push received", "invalid app name");
+                    //send ack back to server
+                    String ack = "{" +
+                            "\"type\":\"push\"," +
+                            "\"token\":\"" + new SharedPref(context).loadData(app + "Token") +
+                            "\",\"data\":\"" + jsonObject.getString("data") + "\"" +
+                            "\"result\":\"success\"" +
+                            "}";
+                    ws.send(ack);
                     break;
             }
 

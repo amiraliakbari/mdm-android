@@ -22,7 +22,6 @@ public class MDMService extends JobService {
     public boolean onStartJob(final JobParameters jobParameters) {
 
         RequestQueue updatequeue = Volley.newRequestQueue(this);
-
         DeviceInfo deviceInfo = new DeviceInfo(getApplicationContext());
         String url = "https://sabaos.com/mdm/collect.gif?" + "v=" + deviceInfo.getApplicationVersion() + "&phoneid=" + deviceInfo.getPhoneSerialNumber() + "&hwid=" + deviceInfo.getHWSerialNumber() +
                 deviceInfo.getIMEI();
@@ -40,8 +39,6 @@ public class MDMService extends JobService {
         updatequeue.add(ExampleStringRequest);
         if (!isMyServiceRunning(WebSocketService.class)) restartService();
         return false;
-
-
     }
 
 
@@ -50,7 +47,6 @@ public class MDMService extends JobService {
     public boolean onStopJob(JobParameters jobParameters) {
         return true;
     }
-
     public void restartService() {
 
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
@@ -68,7 +64,6 @@ public class MDMService extends JobService {
             };
             thread.start();
         }
-
     }
 
     private boolean isMyServiceRunning(Class<?> serviceClass) {

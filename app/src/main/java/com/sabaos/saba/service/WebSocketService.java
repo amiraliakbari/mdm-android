@@ -21,6 +21,7 @@ import com.sabaos.saba.R;
 import com.sabaos.saba.utils.DBManager;
 import com.sabaos.saba.utils.DeviceInfo;
 import com.sabaos.saba.utils.MessageHandle;
+import com.sabaos.saba.utils.SabaSecureRandom;
 import com.sabaos.saba.utils.SharedPref;
 
 import java.math.BigDecimal;
@@ -49,7 +50,8 @@ public class WebSocketService extends Service {
         sharedPref = new SharedPref(getApplicationContext());
         if (sharedPref.loadData("deviceId").equals("empty")) {
 
-            sharedPref.saveData("deviceId", "1234");
+            SabaSecureRandom sabaSecureRandom = new SabaSecureRandom();
+            sharedPref.saveData("deviceId", sabaSecureRandom.generateSecureRandom());
         }
         caculateMobileData();
         saveMobileDataInSQLite();
@@ -73,7 +75,6 @@ public class WebSocketService extends Service {
 
         RemoteViews notificationLayout = new RemoteViews(getPackageName(), R.layout.notification_small);
         RemoteViews notificationLayoutExpanded = new RemoteViews(getPackageName(), R.layout.notification_large);
-
         String memoryStatus = getString(R.string.memory_string) + " " + deviceInfo.showUsedMemory();
         notificationLayout.setProgressBar(R.id.progressBar1, 100, deviceInfo.showProgressValue(), false);
         notificationLayoutExpanded.setProgressBar(R.id.progressBar1, 100, deviceInfo.showProgressValue(), false);
@@ -88,7 +89,6 @@ public class WebSocketService extends Service {
 
             NotificationManager notificationManager =
                     (NotificationManager) getSystemService(Context.NOTIFICATION_SERVICE);
-
             String channelId = "Saba_notification";
             CharSequence channelName = "Saba_channel";
             int importance = NotificationManager.IMPORTANCE_LOW;
@@ -96,7 +96,6 @@ public class WebSocketService extends Service {
             notificationManager.createNotificationChannel(notificationChannel);
 
             Notification notification =
-
                     new NotificationCompat.Builder(this, channelId)
                             .setSmallIcon(R.mipmap.ic_saba)
                             .setStyle(new NotificationCompat.DecoratedCustomViewStyle())
@@ -106,7 +105,6 @@ public class WebSocketService extends Service {
             startForeground(importance, notification);
         } else {
             Notification notification =
-
                     new NotificationCompat.Builder(this, "Saba_notification")
                             .setSmallIcon(R.mipmap.ic_saba)
                             .setStyle(new NotificationCompat.DecoratedCustomViewStyle())
@@ -115,7 +113,6 @@ public class WebSocketService extends Service {
                             .build();
             startForeground(NotificationManager.IMPORTANCE_LOW, notification);
         }
-
     }
 
     public String getFormattedTraffic(long dataLong) {
@@ -188,11 +185,11 @@ public class WebSocketService extends Service {
     public void startWebSocket() {
         MessageHandle messageHandle = new MessageHandle();
         Handler handler = new Handler();
-        DeviceInfo deviceInfo = new DeviceInfo(getApplicationContext());
-        String url = "{\"v\": " + deviceInfo.getApplicationVersion() + ", phoneid=" + deviceInfo.getPhoneSerialNumber() + "&hwid=" + deviceInfo.getHWSerialNumber() +
-                deviceInfo.getIMEI() + "}";
+//        DeviceInfo deviceInfo = new DeviceInfo(getApplicationContext());
+//        String url = "{\"v\": " + deviceInfo.getApplicationVersion() + ", phoneid=" + deviceInfo.getPhoneSerialNumber() + "&hwid=" + deviceInfo.getHWSerialNumber() +
+//                deviceInfo.getIMEI() + "}";
         OkHttpClient client = new OkHttpClient.Builder().connectTimeout(0, TimeUnit.HOURS).build();
-        Request request = new Request.Builder().url("ws://echo.websocket.org").build();
+        Request request = new Request.Builder().url("wss://push.sabaos.com").build();
         WebSocketListener listener = new WebSocketListener() {
             @Override
             public void onOpen(WebSocket webSocket, Response response) {
@@ -206,13 +203,6 @@ public class WebSocketService extends Service {
             public void onMessage(WebSocket webSocket, String text) {
                 super.onMessage(webSocket, text);
                 Log.i("WebSocket Received ", text);
-//                new Handler(Looper.getMainLooper()).post(new Runnable() {
-//                    @Override
-//                    public void run() {
-//                        Toast.makeText(getApplicationContext(), text, Toast.LENGTH_LONG).show();
-//                    }
-//                });
-
                 messageHandle.handleReceivedMessages(getApplicationContext(), text);
             }
 
