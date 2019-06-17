@@ -4,10 +4,7 @@ import android.content.ComponentName;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Build;
-import android.os.Handler;
-import android.os.Looper;
 import android.util.Log;
-import android.widget.Toast;
 
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -58,16 +55,7 @@ public class MessageHandle {
                     } else {
                         context.startService(intent);
                     }
-                    new Handler(Looper.getMainLooper()).post(new Runnable() {
-                        @Override
-                        public void run() {
-                            try {
-                                Toast.makeText(context,"From Saba app: " + jsonObject.getString("data"), Toast.LENGTH_LONG).show();
-                            } catch (JSONException e) {
-                                e.printStackTrace();
-                            }
-                        }
-                    });
+
                     //send ack back to server
                     String ack = "{" +
                             "\"type\":\"push\"," +
