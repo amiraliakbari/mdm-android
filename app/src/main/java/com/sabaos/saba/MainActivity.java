@@ -4,6 +4,8 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.app.ActivityCompat;
 
 import android.Manifest;
+import android.app.AlarmManager;
+import android.app.PendingIntent;
 import android.app.job.JobInfo;
 import android.app.job.JobScheduler;
 import android.content.ComponentName;
@@ -21,9 +23,12 @@ import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.sabaos.saba.service.CheckServicePersistence;
+import com.sabaos.saba.service.WebSocketService;
 import com.sabaos.saba.utils.DeviceInfo;
 import com.sabaos.saba.service.MDMService;
 
+import java.util.Calendar;
 import java.util.regex.Pattern;
 
 public class MainActivity extends AppCompatActivity {
@@ -132,4 +137,4 @@ public class MainActivity extends AppCompatActivity {
         return Pattern.compile("[0-9]").matcher(s).find();
     }
 
-}
+z}

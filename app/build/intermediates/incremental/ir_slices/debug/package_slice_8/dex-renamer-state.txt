@@ -1,4 +1,0 @@
-#Sat Jun 15 17:27:23 IRDT 2019
-base.0=/home/kianian/Desktop/projects/1-MDM Projects/mdm-android/app/build/intermediates/transforms/dexMerger/debug/8
-path.0=classes.dex
-renamed.0=classes.dex

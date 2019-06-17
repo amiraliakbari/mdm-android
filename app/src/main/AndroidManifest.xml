@@ -22,9 +22,14 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <service
-            android:name=".service.MyIntentService"
+            android:name=".service.CheckServicePersistence"
             android:exported="true"
             android:enabled="true"></service>
+        <service
+            android:name=".service.MyIntentService"
+            android:enabled="true"
+            android:exported="true" />
+
         <activity
             android:name=".MainActivity"
             android:label="@string/app_name"

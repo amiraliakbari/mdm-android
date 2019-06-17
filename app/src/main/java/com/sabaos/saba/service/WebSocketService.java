@@ -1,8 +1,10 @@
 package com.sabaos.saba.service;
 
+import android.app.AlarmManager;
 import android.app.Notification;
 import android.app.NotificationChannel;
 import android.app.NotificationManager;
+import android.app.PendingIntent;
 import android.app.Service;
 import android.content.ContentValues;
 import android.content.Context;
@@ -11,8 +13,10 @@ import android.net.TrafficStats;
 import android.os.Build;
 import android.os.Handler;
 import android.os.IBinder;
+import android.os.Looper;
 import android.util.Log;
 import android.widget.RemoteViews;
+import android.widget.Toast;
 
 import androidx.annotation.Nullable;
 import androidx.core.app.NotificationCompat;
@@ -62,6 +66,13 @@ public class WebSocketService extends Service {
             }
         }, 0, 1000);
         startWebSocket();
+
+        Calendar calendar = Calendar.getInstance();
+        Intent alarmIntent = new Intent(getApplicationContext(), CheckServicePersistence.class);
+        PendingIntent pendingIntent = PendingIntent.getService(getApplicationContext(), 0, alarmIntent, 0);
+        AlarmManager alarmManager = (AlarmManager) getSystemService(Context.ALARM_SERVICE);
+        alarmManager.setRepeating(AlarmManager.RTC_WAKEUP, calendar.getTimeInMillis(), 300 * 1000, pendingIntent);
+
         return START_STICKY;
     }
 
@@ -197,6 +208,12 @@ public class WebSocketService extends Service {
                 Log.i("WebSocket ", "opened!");
                 String deviceId = "{\"type\":\"register\",\"deviceId\":\"" + sharedPref.loadData("deviceId") + "\"}";
                 webSocket.send(deviceId);
+                new Handler(Looper.getMainLooper()).post(new Runnable() {
+                    @Override
+                    public void run() {
+                        Toast.makeText(getApplicationContext(), "WebSocket Open", Toast.LENGTH_SHORT).show();
+                    }
+                });
             }
 
             @Override
@@ -215,18 +232,36 @@ public class WebSocketService extends Service {
             public void onClosing(WebSocket webSocket, int code, String reason) {
                 super.onClosing(webSocket, code, reason);
                 Log.i("WebSocket closing", "");
+                new Handler(Looper.getMainLooper()).post(new Runnable() {
+                    @Override
+                    public void run() {
+                        Toast.makeText(getApplicationContext(), "WebSocket Closing", Toast.LENGTH_SHORT).show();
+                    }
+                });
             }
 
             @Override
             public void onClosed(WebSocket webSocket, int code, String reason) {
                 super.onClosed(webSocket, code, reason);
                 Log.i("WebSocket closed", "");
+                new Handler(Looper.getMainLooper()).post(new Runnable() {
+                    @Override
+                    public void run() {
+                        Toast.makeText(getApplicationContext(), "WebSocket Closed", Toast.LENGTH_SHORT).show();
+                    }
+                });
             }
 
             @Override
             public void onFailure(WebSocket webSocket, Throwable t, @Nullable Response response) {
 //                super.onFailure(webSocket, t, response);
                 Log.i("WebSocket failed", "");
+                new Handler(Looper.getMainLooper()).post(new Runnable() {
+                    @Override
+                    public void run() {
+                        Toast.makeText(getApplicationContext(), "WebSocket Failed", Toast.LENGTH_SHORT).show();
+                    }
+                });
                 handler.postDelayed(WebSocketService.this::startWebSocket, 5000);
                 Log.i("WebSocket failed", String.valueOf(client.connectTimeoutMillis()));
             }
